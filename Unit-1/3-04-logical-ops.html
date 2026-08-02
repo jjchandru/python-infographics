@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Logical Operators</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .expr-syntax {
+    font-size: 1.1rem;
+  }
+  dl {
+    margin-top: 0;
+  }
+  .code {
+    font-size: 1.05rem;
+  }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 1.3 - OPERATORS AND EXPRESSIONS</h1>
+    <span class="page-number">(4)</span>
+  </div>
+
+  <section class="box">
+    <h2>LOGICAL OPERATORS</h2>
+    <pre class="code"><span class="op">and</span>, <span class="op">or</span>, <span class="op">not</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>SYNTAX - LOGICAL EXPRESSION</h2>
+    <pre class="code expr-syntax"><span class="field">{operand}</span> <span class="op">and|or</span> <span class="field">{operand}</span></pre>
+    <pre class="code expr-syntax"><span class="op">not</span> <span class="field">{operand}</span></pre>
+    <dl>
+      <dt class="field">{operand}</dt><dd> {identifier | literal | arithmetic-expression}</dd>
+    </dl>
+  </section>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">age = 5
+is_minor = age >= 4 and age <= 18    <span class="comment"># True</span>
+is_not_minor = not is_minor          <span class="comment"># False</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>LOGICAL OPERATOR PRECEDENCE</h2>
+    <pre class="code"><span class="op">()</span>, <span class="op">not</span>, <span class="op">and</span>, <span class="op">or</span></pre>
+    <!-- <p>NOTE: Listed highest to lowest precedence &ndash; <span class="op">not</span> is evaluated first, <span class="op">or</span> last.</p> -->
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Formatted String Literal</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 1.4 - STATEMENTS, CONVERSION & OUTPUT</h1>
+    <span class="page-number">(5)</span>
+  </div>
+  <p class="subtitle">Helps formatting without concatenation.</p>
+
+  <section class="box">
+    <h2>SYNTAX - FORMATTED STRING LITERAL</h2>
+    <pre class="code">f"<span class="op">[[&lt;chars&gt;] {&lt;field&gt;}]*</span>"</pre>
+    <dl>
+      <dt class="op">[]</dt><dd> optional</dd>
+      <dt class="op">*</dt><dd> can be repeated</dd>
+      <dt class="op">&lt;chars&gt;</dt><dd> Characters of String</dd>
+      <dt class="op">&lt;field&gt;</dt><dd> <i>{identifier | literal | expression}</i></dd>
+    </dl>
+  </section>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">name = "Alex"
+
+age = 15
+
+print(f"<span class="field">{name}</span> is <span class="field">{age}</span> years old.")
+
+Output:
+<span class="out">Alex is 15 years old.</span></pre>
+  </section>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - type() Function</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 1.2 - VARIABLES, IDENTIFIERS & TYPES</h1>
+    <span class="page-number">(3)</span>
+  </div>
+
+  <section class="box">
+    <h2>SYNTAX - type() FUNCTION</h2>
+    <pre class="code">type(<span class="field">{identifier|literal}</span>)</pre>
+    <dl>
+      <dt class="field">{identifier|literal}</dt><dd> value whose type is being checked</dd>
+    </dl>
+  </section>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">type(5)          <span class="comment"># no output</span>
+print(type(5))   <span class="comment"># &lt;class 'int'&gt;</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>DYNAMIC TYPING</h2>
+    <p>Reassigning another type on existing identifier.</p>
+    <pre class="code">age = 5     <span class="comment"># type of age is 'int'</span>
+age = "5"   <span class="comment"># type of age is 'str'</span></pre>
+  </section>
+</body>
+</html>

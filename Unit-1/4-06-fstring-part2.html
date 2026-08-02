@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Format Specifier</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 1.4 - STATEMENTS, CONVERSION & OUTPUT</h1>
+    <span class="page-number">(6)</span>
+  </div>
+  <p class="subtitle">Control how a value is displayed inside a field.</p>
+
+  <section class="box">
+    <h2>SYNTAX - FORMAT SPECIFIER</h2>
+    <pre class="code">{&lt;field&gt;:<span class="op">&lt;format-specifier&gt;</span>}</pre>
+    <dl>
+      <dt class="op">&lt;format-specifier&gt;</dt><dd> refer examples below</dd>
+    </dl>
+  </section>
+
+  <section class="box">
+    <h2>EXAMPLES</h2>
+    <table>
+      <thead>
+        <tr><th>Example</th><th>Output</th><th>Description</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td width="45%"><code>f"{3.14159:<span class="op">.2f</span>}"</code></td>
+          <td width="15%"><code class="code-output">3.14</code></td>
+          <td width="40%">Rounds to 2 decimals</td>
+        </tr>
+        <tr>
+          <td><code>f"{1234567:<span class="op">,</span>}"</code></td>
+          <td><code class="code-output">1,234,567</code></td>
+          <td>Comma thousands separator</td>
+        </tr>
+        <tr>
+          <td><code>f"{42:<span class="op">&gt;6</span>}"</code></td>
+          <td><code class="code-output">&nbsp;&nbsp;&nbsp;&nbsp;42</code></td>
+          <td>Right-aligned, width 6</td>
+        </tr>
+        <tr>
+          <td><code>f"{42:<span class="op">&lt;6</span>}"</code></td>
+          <td><code class="code-output">42&nbsp;&nbsp;&nbsp;&nbsp;</code></td>
+          <td>Left-aligned, width 6</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</body>
+</html>

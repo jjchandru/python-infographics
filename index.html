@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python Infographics</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f2f6fb;
+  }
+
+  body {
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 0;
+  }
+
+  .stage {
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 5px;
+  }
+
+  #viewer {
+    display: block;
+    width: 100%;
+    border: none;
+  }
+
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 0;
+  }
+
+  .nav-bar button {
+    flex: 1;
+    font-family: "Segoe UI Semibold", Arial, sans-serif;
+    font-size: 1em;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    background: #4a7ab5;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .nav-bar button:disabled {
+    background: #7a93ab;
+    cursor: not-allowed;
+  }
+
+  .nav-bar button:not(:disabled):hover {
+    background: #2a5a8c;
+  }
+</style>
+</head>
+<body>
+
+  <div class="stage">
+    <iframe id="viewer" src=""></iframe>
+
+    <div class="nav-bar">
+      <button id="prevBtn">&larr; Previous</button>
+      <button id="nextBtn">Next &rarr;</button>
+    </div>
+  </div>
+
+<script>
+  var unit1Files = [
+    "2-01-variables.html",
+    "2-02-identifier.html",
+    "2-03-type-function.html",
+    "3-01-arith-ops.html",
+    "3-02-arith-ops.html",
+    "3-03-comp-ops.html",
+    "3-04-logical-ops.html",
+    "3-05-truthy-falsy.html",
+    "4-01-statements.html",
+    "4-02-tuple-unpacking.html",
+    "4-03-string-quotes.html",
+    "4-04-string-index.html",
+    "4-05-fstring-part1.html",
+    "4-06-fstring-part2.html",
+    "4-07-fstring-exercise.html"
+  ];
+
+  var unit2Files = [
+    "1-01-if.html",
+    "1-02-if-else.html",
+    "1-03-if-elif-else-syntax.html",
+    "1-04-if-elif-else-example.html"
+  ];
+
+  var pages = unit1Files.map(function (f) { return "Unit-1/" + f; })
+    .concat(unit2Files.map(function (f) { return "Unit-2/" + f; }));
+
+  var currentIndex = pages.indexOf("Unit-1/2-01-variables.html");
+  if (currentIndex === -1) currentIndex = 0;
+
+  var viewer = document.getElementById("viewer");
+  var prevBtn = document.getElementById("prevBtn");
+  var nextBtn = document.getElementById("nextBtn");
+
+  function resizeViewer() {
+    try {
+      var doc = viewer.contentWindow.document;
+      viewer.style.height = doc.documentElement.scrollHeight + "px";
+    } catch (e) {
+      viewer.style.height = "600px";
+    }
+  }
+
+  viewer.addEventListener("load", resizeViewer);
+  window.addEventListener("resize", resizeViewer);
+
+  function render() {
+    viewer.src = pages[currentIndex];
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex === pages.length - 1;
+  }
+
+  prevBtn.addEventListener("click", function () {
+    if (currentIndex > 0) {
+      currentIndex--;
+      render();
+    }
+  });
+
+  nextBtn.addEventListener("click", function () {
+    if (currentIndex < pages.length - 1) {
+      currentIndex++;
+      render();
+    }
+  });
+
+  render();
+</script>
+
+</body>
+</html>
