@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Python Infographics</title>
+<title>Python</title>
 <style>
   html, body {
     margin: 0;
@@ -28,6 +28,55 @@
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0 5px;
+  }
+
+  #menu {
+    background: #fff;
+    border: 3px solid #4a7ab5;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 4px 16px 16px;
+  }
+
+  #menu h1 {
+    text-align: center;
+    color: #1a3a5c;
+    font-size: 1.2em;
+  }
+
+  #menu h2 {
+    background: #dce9f7;
+    color: #1a3a5c;
+    margin: 18px 0 8px;
+    padding: 8px 12px;
+    font-size: 1em;
+    border-radius: 4px;
+  }
+
+  #menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  #menu li {
+    border-bottom: 1px solid #dce9f7;
+  }
+
+  #menu li:last-child {
+    border-bottom: none;
+  }
+
+  #menu li a {
+    display: block;
+    /* padding: 9px 4px; */
+    color: #1a3a5c;
+    font-family: "Segoe UI Semibold", Arial, sans-serif;
+    text-decoration: underline;
+  }
+
+  #menu li a:hover {
+    background: #f2f6fb;
   }
 
   #viewer {
@@ -65,14 +114,24 @@
   .nav-bar button:not(:disabled):hover {
     background: #2a5a8c;
   }
+
+  #homeBtn {
+    flex: 0.7;
+  }
 </style>
 </head>
 <body>
 
   <div class="stage">
-    <iframe id="viewer" src=""></iframe>
+    <div id="menu">
+      <h1>Python</h1>
+      <div id="menuGroups"></div>
+    </div>
 
-    <div class="nav-bar">
+    <iframe id="viewer" src="" style="display: none;"></iframe>
+
+    <div class="nav-bar" id="viewerNav" style="display: none;">
+      <button id="homeBtn">Home</button>
       <button id="prevBtn">&larr; Previous</button>
       <button id="nextBtn">Next &rarr;</button>
     </div>
@@ -107,12 +166,65 @@
   var pages = unit1Files.map(function (f) { return "Unit-1/" + f; })
     .concat(unit2Files.map(function (f) { return "Unit-2/" + f; }));
 
-  var currentIndex = pages.indexOf("Unit-1/2-01-variables.html");
-  if (currentIndex === -1) currentIndex = 0;
+  function pageLabel(filename) {
+    var name = filename.replace(/\.html$/, "");
+    var parts = name.split("-");
+    var subId = parts[1];
+    var title = parts.slice(2).join(" ");
+    title = title.charAt(0).toUpperCase() + title.slice(1);
+    // return subId + " " + title;
+    return title;
+  }
 
+  var menuEl = document.getElementById("menu");
+  var menuGroups = document.getElementById("menuGroups");
+  var stageEl = document.querySelector(".stage");
   var viewer = document.getElementById("viewer");
+  var viewerNav = document.getElementById("viewerNav");
+  var homeBtn = document.getElementById("homeBtn");
   var prevBtn = document.getElementById("prevBtn");
   var nextBtn = document.getElementById("nextBtn");
+
+  function buildMenu(unitNumber, files, folder) {
+    var topicOrder = [];
+    var topicGroups = {};
+
+    files.forEach(function (f) {
+      var topic = f.split("-")[0];
+      if (!topicGroups[topic]) {
+        topicGroups[topic] = [];
+        topicOrder.push(topic);
+      }
+      topicGroups[topic].push(f);
+    });
+
+    topicOrder.forEach(function (topic) {
+      var h2 = document.createElement("h2");
+      h2.textContent = "Unit " + unitNumber + "." + topic;
+      menuGroups.appendChild(h2);
+
+      var ul = document.createElement("ul");
+      topicGroups[topic].forEach(function (f) {
+        var pageIndex = pages.indexOf(folder + "/" + f);
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = "#";
+        a.textContent = pageLabel(f);
+        a.addEventListener("click", function (e) {
+          e.preventDefault();
+          goToPage(pageIndex);
+        });
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      menuGroups.appendChild(ul);
+    });
+  }
+
+  buildMenu(1, unit1Files, "Unit-1");
+  buildMenu(2, unit2Files, "Unit-2");
+
+  var currentIndex = 0;
 
   function resizeViewer() {
     try {
@@ -132,6 +244,26 @@
     nextBtn.disabled = currentIndex === pages.length - 1;
   }
 
+  function showMenu() {
+    menuEl.style.display = "";
+    viewer.style.display = "none";
+    viewerNav.style.display = "none";
+  }
+
+  function showViewer() {
+    menuEl.style.display = "none";
+    viewer.style.display = "block";
+    viewerNav.style.display = "flex";
+  }
+
+  function goToPage(index) {
+    currentIndex = index;
+    showViewer();
+    render();
+  }
+
+  homeBtn.addEventListener("click", showMenu);
+
   prevBtn.addEventListener("click", function () {
     if (currentIndex > 0) {
       currentIndex--;
@@ -146,7 +278,7 @@
     }
   });
 
-  render();
+  showMenu();
 </script>
 
 </body>
