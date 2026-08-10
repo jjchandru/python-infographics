@@ -130,3 +130,13 @@ p {
   padding-left: 12px;
   padding-right: 12px;
 }
+
+.placeholder {
+  color: #888;
+  font-weight: normal;
+}
+
+.keyword {
+  color: #0066cc;
+  font-weight: bold;
+}

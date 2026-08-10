@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - For Range (3 Params)</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 2.2 - LOOPS</h1>
+    <span class="page-number">(11)</span>
+  </div>
+  <p class="subtitle">range(start, stop, step) &mdash; counts from start to stop, exclusive, by step.</p>
+
+  <section class="box">
+    <h2>SYNTAX - RANGE(START, STOP, STEP)</h2>
+    <pre class="code">for <span class="field">{loop_variable}</span> in <span class="op">range({start}, {stop}, {step})</span>:
+    {statement(s)}</pre>
+    <dl>
+      <dt class="op">{start}</dt><dd> lower bound, inclusive</dd>
+      <dt class="op">{stop}</dt><dd> upper bound, exclusive</dd>
+      <dt class="op">{step}</dt><dd> amount to add each time &mdash; negative counts down</dd>
+    </dl>
+  </section>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">for <span class="field">i</span> in <span class="op">range(10, 0, -2)</span>:
+    print(i)
+
+Output:
+<span class="out">10
+8
+6
+4
+2</span></pre>
+  </section>
+</body>
+</html>

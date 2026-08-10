@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - While Loop Steps</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .trace {
+    font-size: 0.85rem;
+    border: none;
+  }
+  .trace th, .trace td {
+    padding: 4px 8px;
+    border: none;
+  }
+  /* .trace tr:nth-child(even) {
+    background: #d7e9f9;
+  } */
+  .trace td:nth-child(2) {
+    font-family: "Consolas", monospace;
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 2.2 - LOOPS</h1>
+    <span class="page-number">(3)</span>
+  </div>
+  <p class="subtitle">Repeats a code block while condition stays True.</p>
+
+  <section class="box">
+    <h2>CODE</h2>
+    <pre class="code">count = 1
+
+while <span class="field">count &lt;= 3</span>:
+    print(count)
+    count += 1</pre>
+  </section>
+
+  <section class="box">
+    <h2>TRACE - STEP BY STEP</h2>
+    <table class="trace">
+      <tr><th>Step</th><th>Statement</th><th>Description</th></tr>
+      <tr><td>1</td><td>count = 1</td><td>1 assigned to 'count'</td></tr>
+      <tr><td>2</td><td>while count &lt;= 3:</td><td>1 &lt;= 3 is True</td></tr>
+      <tr><td>3</td><td>print(count)</td><td>prints 1</td></tr>
+      <tr><td>4</td><td>count += 1</td><td>'count' incremented to 2</td></tr>
+      <tr><td>5</td><td>while count &lt;= 3:</td><td>2 &lt;= 3 is True</td></tr>
+      <tr><td>6</td><td>print(count)</td><td>prints 2</td></tr>
+      <tr><td>7</td><td>count += 1</td><td>'count' incremented to 3</td></tr>
+      <tr><td>8</td><td>while count &lt;= 3:</td><td>3 &lt;= 3 is True</td></tr>
+      <tr><td>9</td><td>print(count)</td><td>prints 3</td></tr>
+      <tr><td>10</td><td>count += 1</td><td>'count' incremented to 4</td></tr>
+      <tr><td>11</td><td>while count &lt;= 3:</td><td>4 &lt;= 3 is False, loop ends</td></tr>
+    </table>
+  </section>
+</body>
+</html>

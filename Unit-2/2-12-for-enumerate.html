@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - For with Enumerate</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 2.2 - LOOPS</h1>
+    <span class="page-number">(12)</span>
+  </div>
+  <p class="subtitle">enumerate(sequence) &mdash; returns (index, value) pairs when looping.</p>
+
+  <section class="box">
+    <h2>SYNTAX - ENUMERATE(SEQUENCE)</h2>
+    <pre class="code">for <span class="field">{index}, {value}</span> in <span class="op">enumerate({sequence})</span>:
+    {statement(s)}</pre>
+    <dl>
+      <dt class="field">{index}</dt><dd> position in the sequence, starting from 0</dd>
+      <dt class="field">{value}</dt><dd> actual item from the sequence</dd>
+      <dt class="op">{sequence}</dt><dd> any iterable (list, tuple, string, etc.)</dd>
+    </dl>
+  </section>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">word = "PYTHON"
+
+for <span class="field">index, char</span> in <span class="op">enumerate(word)</span>:
+    print(f"{index}: {char}")
+
+Output:
+<span class="out">0: P
+1: Y
+2: T
+3: H
+4: O
+5: N</span></pre>
+  </section>
+</body>
+</html>

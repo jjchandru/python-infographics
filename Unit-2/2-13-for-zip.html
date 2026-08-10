@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - For with Zip</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 1.1em;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 2.2 - LOOPS</h1>
+    <span class="page-number">(13)</span>
+  </div>
+  <p class="subtitle">zip(sequence1, sequence2, ...) &mdash; pairs items from multiple sequences.</p>
+
+  <section class="box">
+    <h2>SYNTAX - ZIP(SEQ1, SEQ2, ...)</h2>
+    <pre class="code">for <span class="field">{var1}, {var2}, ...</span> in <span class="op">zip({seq1}, {seq2}, ...)</span>:
+    {statement(s)}</pre>
+    <dl>
+      <dt class="field">{var1}, {var2}, ...</dt><dd> variables to unpack paired items</dd>
+      <dt class="op">{seq1}, {seq2}, ...</dt><dd> two or more iterables to combine together</dd>
+    </dl>
+    <p class="note">Stops when the shortest sequence ends.</p>
+  </section>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">letters = "ABC"
+numbers = "123"
+
+for <span class="field">letter, number</span> in <span class="op">zip(letters, numbers)</span>:
+    print(f"{letter} &rarr; {number}")
+
+Output:
+<span class="out">A &rarr; 1
+B &rarr; 2
+C &rarr; 3</span></pre>
+  </section>
+</body>
+</html>
