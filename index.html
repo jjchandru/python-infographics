@@ -86,6 +86,7 @@
     display: block;
     width: 100%;
     border: none;
+    margin: 0;
   }
 
   .nav-bar {
@@ -94,7 +95,8 @@
     gap: 16px;
     width: 100%;
     box-sizing: border-box;
-    padding: 12px 0;
+    padding: 8px 0;
+    margin-top: 8px;
   }
 
   .nav-bar button {
@@ -121,6 +123,15 @@
   #homeBtn {
     flex: 0.7;
   }
+
+  .page-indicator {
+    text-align: center;
+    font-family: "Consolas", monospace;
+    font-size: 0.85em;
+    color: #4a7ab5;
+    font-weight: bold;
+    margin-top: 8px;
+  }
 </style>
 </head>
 <body>
@@ -131,13 +142,15 @@
       <div id="menuGroups"></div>
     </div>
 
-    <iframe id="viewer" src="" style="display: none;"></iframe>
+    <div id="viewer" style="display: none;"></div>
 
     <div class="nav-bar" id="viewerNav" style="display: none;">
       <button id="homeBtn">Home</button>
       <button id="prevBtn">&larr; Previous</button>
       <button id="nextBtn">Next &rarr;</button>
     </div>
+
+    <div class="page-indicator" id="pageIndicator" style="display: none;"></div>
   </div>
 
 <script>
@@ -186,7 +199,16 @@
     "2-18-loop-nested-loop.html",
     "2-19-loop-nested-loop-solution.html",
     "3-01-simple-function-syntax.html",
-    "3-02-simple-function-example.html"
+    "3-02-simple-function-example.html",
+    "3-03-function-params-return-puzzle.html",
+    "3-04-function-params-return-syntax.html",
+    "3-05-args-puzzle.html",
+    "3-06-args-explained.html",
+    "3-07-kwargs-intro.html",
+    "3-08-local-global-variables-puzzle.html",
+    "3-09-local-global-variables-explained.html",
+    "3-10-recursion.html",
+    "3-11-docstring.html"
   ];
 
   var pages = unit1Files.map(function (f) { return "Unit-1/" + f; })
@@ -210,6 +232,18 @@
   var homeBtn = document.getElementById("homeBtn");
   var prevBtn = document.getElementById("prevBtn");
   var nextBtn = document.getElementById("nextBtn");
+  var pageIndicator = document.getElementById("pageIndicator");
+
+  var viewerShadow = viewer.attachShadow({ mode: "open" });
+  var viewerStyleLink = document.createElement("link");
+  viewerStyleLink.rel = "stylesheet";
+  viewerStyleLink.href = "styles.css";
+  var viewerHostStyle = document.createElement("style");
+  viewerHostStyle.textContent = ":host { display: block; font-family: 'Segoe UI', Arial, sans-serif; color: #1a3a5c; }";
+  var viewerContent = document.createElement("div");
+  viewerShadow.appendChild(viewerStyleLink);
+  viewerShadow.appendChild(viewerHostStyle);
+  viewerShadow.appendChild(viewerContent);
 
   function buildMenu(unitNumber, files, folder) {
     var topicOrder = [];
@@ -252,34 +286,38 @@
 
   var currentIndex = 0;
 
-  function resizeViewer() {
-    try {
-      var doc = viewer.contentWindow.document;
-      viewer.style.height = doc.documentElement.scrollHeight + "px";
-    } catch (e) {
-      viewer.style.height = "600px";
-    }
-  }
-
-  viewer.addEventListener("load", resizeViewer);
-  window.addEventListener("resize", resizeViewer);
-
   function render() {
-    viewer.src = pages[currentIndex];
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex === pages.length - 1;
+    fetch(pages[currentIndex])
+      .then(function (res) { return res.text(); })
+      .then(function (html) {
+        var doc = new DOMParser().parseFromString(html, "text/html");
+        var pageNumEl = doc.body.querySelector(".page-number");
+        pageIndicator.textContent = pageNumEl ? pageNumEl.textContent : "";
+        if (pageNumEl) {
+          pageNumEl.remove();
+        }
+        viewerContent.innerHTML = doc.body.innerHTML;
+      })
+      .catch(function () {
+        viewerContent.innerHTML = "<p>Unable to load page.</p>";
+        pageIndicator.textContent = "";
+      });
   }
 
   function showMenu() {
     menuEl.style.display = "";
     viewer.style.display = "none";
     viewerNav.style.display = "none";
+    pageIndicator.style.display = "none";
   }
 
   function showViewer() {
     menuEl.style.display = "none";
     viewer.style.display = "block";
     viewerNav.style.display = "flex";
+    pageIndicator.style.display = "block";
   }
 
   function goToPage(index) {

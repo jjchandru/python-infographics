@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Function Parameters & Return</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 2.3 - CONTROL STRUCTURES, FUNCTIONS & TOOLING</h1>
+    <span class="page-number">(4)</span>
+  </div>
+  <p class="subtitle">Function accepting parameters and returning value</p>
+
+  <section class="box">
+    <h2>SYNTAX - FUNCTION WITH PARAMETERS</h2>
+    <pre class="code">def <span class="op">{function_name}</span>(<span class="op">{param1}</span>, <span class="op">{param2}</span>):
+    {code_block}
+    return <span class="op">{expression}</span></pre>
+    <dl>
+      <dt class="op">{param1}, {param2}</dt><dd> Parameter names (identifiers)</dd>
+      <dt class="op">{expression}</dt><dd> Value to return to caller</dd>
+    </dl>
+  </section>
+
+  <section class="box">
+    <h2>SYNTAX - DEFAULT PARAMETER</h2>
+    <pre class="code">def <span class="op">{function_name}</span>(<span class="op">{param1}</span>, <span class="op">{param2}={value}</span>):
+    {code_block}
+    return <span class="op">{expression}</span></pre>
+    <dl>
+      <dt class="op">{param2}={value}</dt><dd> Default value if not provided</dd>
+    </dl>
+  </section>
+
+  <section class="box">
+    <h2>CALL - POSITIONAL ARGUMENTS</h2>
+    <pre class="code"><span class="op">{function_name}</span>(<span class="op">{arg1}</span>, <span class="op">{arg2}</span>)</pre>
+    <dl>
+      <dt class="op">{arg1}, {arg2}</dt><dd> Values passed in order</dd>
+    </dl>
+  </section>
+
+  <section class="box">
+    <h2>CALL - KEYWORD ARGUMENTS</h2>
+    <pre class="code"><span class="op">{function_name}</span>(<span class="op">{param2}={arg2}</span>, <span class="op">{param1}={arg1}</span>)</pre>
+    <dl>
+      <dt class="op">{param}={arg}</dt><dd> Order-independent (name-based)</dd>
+    </dl>
+  </section>
+
+  <section class="box">
+    <h2>CALL - USING DEFAULT</h2>
+    <pre class="code"><span class="op">{function_name}</span>(<span class="op">{arg1}</span>)</pre>
+    <dl>
+      <dt>Omitted parameter</dt><dd> Uses default value from definition</dd>
+    </dl>
+  </section>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Recursion</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 2.3 - CONTROL STRUCTURES, FUNCTIONS & TOOLING</h1>
+    <span class="page-number">(10)</span>
+  </div>
+  <p class="subtitle">Recursion: A function calling itself</p>
+
+  <section class="box">
+    <h2>EXAMPLE - FACTORIAL</h2>
+    <pre class="code">def factorial(n):
+    <span class="comment"># Base case: Stop recursion</span>
+    if n == 0 or n == 1:
+        return 1
+    
+    <span class="comment"># Recursive case: Call itself</span>
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))  <span class="comment"># Output: 120</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>KEY POINTS</h2>
+    <ul>
+      <li>Call current function within a function.</li>
+      <li>Recursion runs into infinite loop and is stopped by Base Case.</li>
+      <li>Recursive case contains the main logic.</li>
+      <li>Do not use recursion for simple looping algorithms like factorial, use them in case of advanced sorting algorithms or tree traversal.</li>
+    </ul>
+  </section>
+</body>
+</html>

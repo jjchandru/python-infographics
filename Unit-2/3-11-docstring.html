@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Docstring</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 2.3 - CONTROL STRUCTURES, FUNCTIONS & TOOLING</h1>
+    <span class="page-number">(11)</span>
+  </div>
+  <p class="subtitle">Docstring: Documentation string for functions</p>
+
+  <section class="box">
+    <h2>EXAMPLE - FUNCTION WITH DOCSTRING</h2>
+    <pre class="code">def volume_of_cylinder(radius, height=10):
+    <span class="op">"""
+    Calculate the volume of a cylinder.
+    
+    Args:
+        radius: Radius of the cylinder base
+        height: Height of the cylinder (default: 10)
+    
+    Returns:
+        Volume of the cylinder
+    """</span>
+    pi = 3.14159
+    volume = pi * radius ** 2 * height
+    return volume
+
+print(volume_of_cylinder(7, 10))</pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>A <strong>docstring</strong> is a string literal enclosed in triple quotes <strong>"""</strong> placed right after the function definition.</li>
+      <li>It documents what the function does, its parameters, and return value.</li>
+      <li>Helps other developers (and your future self) understand the function's purpose without reading the code.</li>
+      <li>Can be accessed using <strong>help(function_name)</strong> or <strong>function_name.__doc__</strong>.</li>
+      <li>Good practice to include docstrings for all functions, especially in larger projects.</li>
+    </ul>
+  </section>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - **kwargs Introduction</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 2.3 - CONTROL STRUCTURES, FUNCTIONS & TOOLING</h1>
+    <span class="page-number">(7)</span>
+  </div>
+  <p class="subtitle">Arbitrary Keyword Arguments (**kwargs)</p>
+
+  <section class="box">
+    <h2>EXAMPLE CODE</h2>
+    <pre class="code">def print_info(**details):
+    print(details)
+
+print_info(name="Alex", roll_no=101, grade="A")
+
+print_info(title="Python", author="Guido", price=499)
+</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code"><span class="out">{'name': 'Alex', 'roll_no': 101, 'grade': 'A'}
+{'title': 'Python', 'author': 'Guido', 'price': 499}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>NOTE</h2>
+    <p style="padding: 12px; margin: 0;">The <strong>**</strong> symbol collects all named parameters as key-value pairs. Named parameters are stored in dictionary format <strong>{key: value}</strong>. We will learn how to work with dictionaries in detail in the next module.</p>
+  </section>
+</body>
+</html>

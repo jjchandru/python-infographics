@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Local & Global Variables</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  code {
+    font-size: 1.1em;
+    font-family: "Consolas", monospace;
+    color: #d2691e;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 2.3 - CONTROL STRUCTURES, FUNCTIONS & TOOLING</h1>
+    <span class="page-number">(9)</span>
+  </div>
+  <p class="subtitle">Local and Global Variables</p>
+
+  <section class="box">
+    <h2>REFERENCE CODE</h2>
+    <pre class="code">count = 10
+
+def print_count():
+    count = 20
+    print("Inside function:", count)
+
+print_count()
+print("Outside function:", count)</pre>
+  </section>
+
+  <section class="box">
+    <h2>GLOBAL VARIABLE</h2>
+    <p style="padding: 12px; margin: 0;">Variable defined outside any function, accessible throughout program. In the code, <code>count = 10</code> is global.</p>
+  </section>
+
+  <section class="box">
+    <h2>LOCAL VARIABLE</h2>
+    <p style="padding: 12px; margin: 0;">Variable defined inside a function, accessible only within. The <code>count = 20</code> inside <code>print_count()</code> is local.</p>
+  </section>
+
+  <section class="box">
+    <h2>VARIABLE SCOPE</h2>
+    <p style="padding: 12px; margin: 0;">Region of code where a variable can be accessed. Local <code>count</code> exists only inside the function body.</p>
+  </section>
+
+  <section class="box">
+    <h2>KEY RULE</h2>
+    <p style="padding: 12px; margin: 0;">Assignment inside a function creates a new local variable. That's why the global <code>count</code> remains 10.</p>
+  </section>
+</body>
+</html>
