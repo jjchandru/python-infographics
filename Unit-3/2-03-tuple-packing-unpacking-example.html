@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Tuple Packing & Unpacking - Example</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.2 - TUPLES</h1>
+    <span class="page-number">(3)</span>
+  </div>
+  <p class="subtitle">Packing a student record into a tuple and unpacking it into named variables</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">student = ("Rahul", 20, "IT")
+
+name, age, dept = student
+
+print(name)
+print(age)
+print(dept)</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code"><span class="out">Rahul
+20
+IT</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">("Rahul", 20, "IT")</code> is <strong>packing</strong>.</li>
+      <li><code class="code-small">name, age, dept = student</code> is <strong>unpacking</strong>.</li>
+      <li>The variable count on the left must match the tuple's length exactly.</li>
+      <li>Always use parentheses when packing.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

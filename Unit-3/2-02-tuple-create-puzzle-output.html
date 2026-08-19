@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Tuple Creation & Indexing - Output</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+    li ul {
+        padding: 6px 0 0 20px;
+    }
+    li ul li {
+        margin-bottom: 4px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.2 - TUPLES</h1>
+    <span class="page-number">(2)</span>
+  </div>
+  <p class="subtitle">Creating a tuple and accessing items by index</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">student = ("Ananya", 21, "CSE")
+
+print(student[0])
+print(student[2])
+student[1] = 22
+print(student)</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code"><span class="out">Ananya
+CSE
+</span><span class="error">TypeError: 'tuple' object does not support item assignment</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>Tuples use parentheses () instead of [].</li>
+      <li>Indexing works exactly like lists.</li>
+      <li>Tuples are <strong>immutable</strong>. Cannot add, modify, or remove items.</li>
+      <li>Due to error, the final <code class="code-small">print(student)</code> never runs.</li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h2>WHEN TO USE A TUPLE</h2>
+    <ul>
+      <li>Use tuple for record of fixed set of fields:
+        <ul>
+          <li>Student - (name, age, department)</li>
+          <li>RGB colour red - (255, 0, 0)</li>
+          <li>GPS coordinates - (lat, lon)</li>
+        </ul>
+      </li>
+      <li>Use list when the collection needs to grow, shrink, or change.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

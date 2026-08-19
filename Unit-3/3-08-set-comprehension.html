@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Set Comprehension</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    .expr-syntax {
+        font-size: 1.05rem;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.3 - SETS</h1>
+    <span class="page-number">(8)</span>
+  </div>
+  <p class="subtitle">Building a set in one expression, with mapping and filtering</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">words = ["apple", "banana", "cherry", "avocado", "blueberry", "fig"]
+
+letters = {w[0] for w in words if len(w) > 4}
+print(letters)
+
+Output:
+<span class="out">{'a', 'b', 'c'}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>SYNTAX - SET COMPREHENSION</h2>
+    <pre class="code expr-syntax">{<span class="field">{expression}</span> <span class="field">{for-loop-statement-no-colon}</span> <span class="field">{conditional-statement-no-colon}</span>}</pre>
+  </section>
+
+</body>
+</html>

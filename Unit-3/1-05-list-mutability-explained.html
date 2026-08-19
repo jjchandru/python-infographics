@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - List Mutability</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+    .mem-diagram {
+        display: flex;
+        gap: 12px;
+        padding: 12px;
+    }
+    .mem-table {
+        flex: 1;
+        text-align: center;
+    }
+    .mem-label {
+        margin: 0 0 4px;
+        font-family: "Segoe UI Semibold", Arial, sans-serif;
+        font-weight: bold;
+    }
+    .mem-address {
+        margin: 0 0 6px;
+        font-family: "Consolas", monospace;
+        font-size: 0.8rem;
+        color: #2a5a8c;
+        font-weight: bold;
+    }
+    table.thick {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    table.thick td {
+        border: 3px solid #4a7ab5;
+        padding: 8px 2px;
+        text-align: center;
+        font-family: "Consolas", monospace;
+        font-weight: bold;
+        font-size: 0.8rem;
+    }
+    table.thick td.highlight {
+        background: #ffe680;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.1 - LISTS</h1>
+    <span class="page-number">(5)</span>
+  </div>
+  <p class="subtitle">Updating an item and demonstrating mutability</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">colors = ["red", "green", "blue"]
+
+colors[1] = "yellow"
+print(colors)</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code"><span class="out">['red', 'yellow', 'blue']</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>Using the assignment operator with an index, a specific list item's value can be modified.</li>
+      <li>Lists are mutable — the list object stays the same, only that cell's value changed.</li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h2>MUTABILITY — MEMORY ADDRESS UNCHANGED</h2>
+    <div class="mem-diagram">
+      <div class="mem-table">
+        <p class="mem-label">BEFORE</p>
+        <p class="mem-address">id: 0x7f3a2b10</p>
+        <table class="thick">
+          <tr><td>red</td><td>green</td><td>blue</td></tr>
+        </table>
+      </div>
+      <div class="mem-table">
+        <p class="mem-label">AFTER</p>
+        <p class="mem-address">id: 0x7f3a2b10</p>
+        <table class="thick">
+          <tr><td>red</td><td class="highlight">yellow</td><td>blue</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

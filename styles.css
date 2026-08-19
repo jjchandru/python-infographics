@@ -88,6 +88,10 @@ dl dd {
   color: #2a6db5;
 }
 
+.error {
+  color: #c0504d;
+}
+
 .comment {
   color: #6a8caf;
   font-style: italic;

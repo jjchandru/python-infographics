@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Tuple Operations</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.2 - TUPLES</h1>
+    <span class="page-number">(6)</span>
+  </div>
+  <p class="subtitle">Basic tuple operations — concatenation, repetition, and membership</p>
+
+  <section class="box">
+    <h2>CONCATENATION</h2>
+    <pre class="code">weekdays = ("Mon", "Tue", "Wed")
+weekend = ("Sat", "Sun")
+
+full_week = weekdays + weekend
+print(full_week)
+
+Output:
+<span class="out">('Mon', 'Tue', 'Wed', 'Sat', 'Sun')</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>REPETITION</h2>
+    <pre class="code">colors = ("red", "green", "blue")
+extended = colors * 2
+print(extended)
+
+Output:
+<span class="out">('red', 'green', 'blue', 'red', 'green', 'blue')</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>MEMBERSHIP</h2>
+    <pre class="code">valid_grades = ("A", "B", "C", "D", "F")
+
+print("B" in valid_grades)
+print("E" in valid_grades)
+
+Output:
+<span class="out">True
+False</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">+</code> concatenates two tuples into a new, longer tuple — neither original tuple is changed.</li>
+      <li><code class="code-small">*</code> repeats a tuple's items — <code class="code-small">colors * 2</code> builds a new tuple with the items doubled up.</li>
+      <li><code class="code-small">in</code> / <code class="code-small">not in</code> checks whether a value exists anywhere in the tuple, returning True or False.</li>
+      <li>All three operations produce a new tuple or a boolean — none of them modify the original tuple, staying consistent with immutability.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

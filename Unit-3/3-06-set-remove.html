@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Set remove()</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.3 - SETS</h1>
+    <span class="page-number">(6)</span>
+  </div>
+  <p class="subtitle">Removing an item from a set with remove()</p>
+
+  <section class="box">
+    <h2>ITEM EXISTS</h2>
+    <pre class="code">cart = {"pen", "notebook", "eraser"}
+
+cart.remove("pen")
+print(cart)
+
+Output:
+<span class="out">{'notebook', 'eraser'}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>ITEM MISSING</h2>
+    <pre class="code">cart = {"pen", "notebook", "eraser"}
+
+cart.remove("marker")
+
+Output:
+<span class="error">KeyError: 'marker'</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">remove()</code> deletes the item if it exists in the set.</li>
+      <li>If the item is not in the set, <code class="code-small">remove()</code> raises a KeyError.</li>
+      <li>Use <code class="code-small">remove()</code> when a missing item should be treated as a bug.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - List Comprehension</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    .expr-syntax {
+        font-size: 1.05rem;
+    }
+    dl {
+        margin-top: 0;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.1 - LISTS</h1>
+    <span class="page-number">(17)</span>
+  </div>
+  <p class="subtitle">Mapping and filtering in one expression</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">temps = [30, 32, 29, 35, 31, 28, 33]
+
+hot_plus_3 = [x + 3 for x in temps if x > 32]
+print(hot_plus_3)
+
+Output:
+<span class="out">[38, 36]</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>SYNTAX - LIST COMPREHENSION</h2>
+    <pre class="code expr-syntax">[<span class="field">{expression}</span> <span class="field">{for-loop-statement-no-colon}</span> <span class="field">{conditional-statement-no-colon}</span>]</pre>
+  </section>
+
+</body>
+</html>

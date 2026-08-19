@@ -211,8 +211,43 @@
     "3-11-docstring.html"
   ];
 
+  var unit3Files = [
+    "1-01-list-create-index-puzzle.html",
+    "1-02-list-create-index-syntax.html",
+    "1-03-list-slicing-step-puzzle.html",
+    "1-04-list-slicing-step-syntax.html",
+    "1-05-list-mutability-explained.html",
+    "1-06-list-methods-puzzle.html",
+    "1-07-objects-attributes-functions.html",
+    "1-08-list-methods.html",
+    "1-09-list-looping-example.html",
+    "1-10-list-sorting.html",
+    "1-11-lambda-puzzle.html",
+    "1-12-lamba-transformation.html",
+    "1-13-sorting-lambda-puzzle.html",
+    "1-14-filter-lambda-puzzle.html",
+    "1-15-map-lambda-puzzle.html",
+    "1-16-nested-list-example.html",
+    "1-17-list-comprehension-example.html",
+    "2-01-tuple-create-puzzle.html",
+    "2-02-tuple-create-puzzle-output.html",
+    "2-03-tuple-packing-unpacking-example.html",
+    "2-04-tuple-index-unpacking-comparison.html",
+    "2-05-tuple-nested-example.html",
+    "2-06-tuple-operations.html",
+    "3-01-set-create-uniqueness-puzzle.html",
+    "3-02-set-create-uniqueness-puzzle-output.html",
+    "3-03-set-operations.html",
+    "3-04-set-membership.html",
+    "3-05-set-add.html",
+    "3-06-set-remove.html",
+    "3-07-set-discard.html",
+    "3-08-set-comprehension.html"
+  ];
+
   var pages = unit1Files.map(function (f) { return "Unit-1/" + f; })
-    .concat(unit2Files.map(function (f) { return "Unit-2/" + f; }));
+    .concat(unit2Files.map(function (f) { return "Unit-2/" + f; }))
+    .concat(unit3Files.map(function (f) { return "Unit-3/" + f; }));
 
   function pageLabel(filename) {
     var name = filename.replace(/\.html$/, "");
@@ -283,6 +318,7 @@
 
   buildMenu(1, unit1Files, "Unit-1");
   buildMenu(2, unit2Files, "Unit-2");
+  buildMenu(3, unit3Files, "Unit-3");
 
   var currentIndex = 0;
 
@@ -298,7 +334,10 @@
         if (pageNumEl) {
           pageNumEl.remove();
         }
-        viewerContent.innerHTML = doc.body.innerHTML;
+        var pageStyles = Array.prototype.map.call(doc.querySelectorAll("head style"), function (el) {
+          return el.textContent;
+        }).join("\n");
+        viewerContent.innerHTML = (pageStyles ? "<style>" + pageStyles + "</style>" : "") + doc.body.innerHTML;
       })
       .catch(function () {
         viewerContent.innerHTML = "<p>Unable to load page.</p>";

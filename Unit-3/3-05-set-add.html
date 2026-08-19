@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Set add()</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.3 - SETS</h1>
+    <span class="page-number">(5)</span>
+  </div>
+  <p class="subtitle">Adding an item to a set with add()</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">cart = {"pen", "notebook", "eraser"}
+
+cart.add("marker")
+print(cart)
+
+cart.add("pen")
+print(cart)
+
+Output:
+<span class="out">{'pen', 'notebook', 'eraser', 'marker'}
+{'pen', 'notebook', 'eraser', 'marker'}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">add()</code> inserts a new item into the set.</li>
+      <li>Adding an item that already exists does nothing, no error, no duplicate.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

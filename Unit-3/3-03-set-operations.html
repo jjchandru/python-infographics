@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Set Operations</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 15px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.3 - SETS</h1>
+    <span class="page-number">(3)</span>
+  </div>
+  <p class="subtitle">Combining and comparing sets — union, intersection, difference, symmetric difference</p>
+
+  <section class="box">
+    <h2>UNION</h2>
+    <pre class="code">python_students = {"Rahul", "Priya", "Aisha"}
+java_students = {"Priya", "Karan", "Aisha"}
+
+print(python_students | java_students)
+
+Output:
+<span class="out">{'Rahul', 'Priya', 'Aisha', 'Karan'}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>INTERSECTION</h2>
+    <pre class="code">python_students = {"Rahul", "Priya", "Aisha"}
+java_students = {"Priya", "Karan", "Aisha"}
+
+print(python_students & java_students)
+
+Output:
+<span class="out">{'Priya', 'Aisha'}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>DIFFERENCE</h2>
+    <pre class="code">python_students = {"Rahul", "Priya", "Aisha"}
+java_students = {"Priya", "Karan", "Aisha"}
+
+print(python_students - java_students)
+
+Output:
+<span class="out">{'Rahul'}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>SYMMETRIC DIFFERENCE</h2>
+    <pre class="code">python_students = {"Rahul", "Priya", "Aisha"}
+java_students = {"Priya", "Karan", "Aisha"}
+
+print(python_students ^ java_students)
+
+Output:
+<span class="out">{'Rahul', 'Karan'}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">| : </code> union - all items from both sets.</li>
+      <li><code class="code-small">&amp; : </code> intersection - items in both sets.</li>
+      <li><code class="code-small">- : </code> difference - items only in the first set, items common in both sets are removed.</li>
+      <li><code class="code-small">^ : </code> symmetric difference - removes items present in both sets.</li>
+      <li>The order of names in the output is not predictable.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Nested Tuples - Example</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.2 - TUPLES</h1>
+    <span class="page-number">(5)</span>
+  </div>
+  <p class="subtitle">Nested tuples — a tuple whose items are themselves tuples</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code"><span class="comment"># x, y coords of a triangle's points</span>
+triangle = ((0, 0), (4, 0), (2, 3))
+
+print(triangle)
+print(triangle[0])
+print(triangle[1][0])</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code"><span class="out">((0, 0), (4, 0), (2, 3))
+(0, 0)
+4</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">triangle</code> is a tuple of three (x, y) points — each point is itself a tuple.</li>
+      <li><code class="code-small">triangle[0]</code> reaches one inner tuple, the first corner point <code class="code-small">(0, 0)</code>.</li>
+      <li><code class="code-small">triangle[1][0]</code> chains two indexes — the second point, then its x-coordinate, 4.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

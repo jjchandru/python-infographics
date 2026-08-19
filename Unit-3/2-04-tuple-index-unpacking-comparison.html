@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Tuple: Index vs Unpacking</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.2 - TUPLES</h1>
+    <span class="page-number">(4)</span>
+  </div>
+  <p class="subtitle">Comparing index access and unpacking for reading tuple items</p>
+
+  <section class="box">
+    <h2>BY INDEX</h2>
+    <pre class="code">student = ("Rahul", 20, "IT")
+
+print(student[0])
+print(student[1])
+print(student[2])</pre>
+  </section>
+
+  <section class="box">
+    <h2>BY UNPACKING</h2>
+    <pre class="code">student = ("Rahul", 20, "IT")
+
+name, age, dept = student
+
+print(name)
+print(age)
+print(dept)</pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>Both blocks provide same output.</li>
+      <li>Index access - must remember the position.</li>
+      <li>Unpacking - assigns each value to a variable name.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

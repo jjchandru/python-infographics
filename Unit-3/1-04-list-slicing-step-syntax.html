@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - List Slicing with Step</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .code {
+    font-size: 1.1rem;
+  }
+  dl {
+    margin-top: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.1 - LISTS</h1>
+    <span class="page-number">(4)</span>
+  </div>
+  <p class="subtitle">Slicing a list with start, stop, and step</p>
+
+  <section class="box">
+    <h2>SYNTAX - SLICE</h2>
+    <pre class="code expr-syntax"><span class="field">{list_identifier}</span>[<span class="field">{start}</span>:<span class="field">{stop}</span>:<span class="field">{step}</span>]</pre>
+    <pre class="code expr-syntax"><span class="field">{start}, {stop}, {step}</span> <span class="op">-</span> <span class="field">{literal | identifier | expression}</span></pre>
+    <dl>
+      <dt class="field">{start}</dt><dd> Index to begin the slice (default: 0)</dd>
+      <dt class="field">{stop}</dt><dd> Index to end the slice, non-inclusive (default: length of list)</dd>
+      <dt class="field">{step}</dt><dd> Interval between picked indices (default: 1); negative value reads the list backward</dd>
+      <dt>Result</dt><dd> Always a new list</dd>
+    </dl>
+  </section>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">temps = [30, 32, 29, 35, 31, 28, 33]
+
+print(temps[1:6:2])
+
+start, stop, step = 1, 6, 2
+print(temps[start:stop:step])
+
+print(temps[0+1:2*3:4//2])
+  </section>
+</body>
+</html>

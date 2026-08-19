@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - List Sorting</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.1 - LISTS</h1>
+    <span class="page-number">(10)</span>
+  </div>
+  <p class="subtitle">sort() vs sorted(), and the reverse argument</p>
+
+  <section class="box">
+    <h2>SORT() - MUTATES IN PLACE</h2>
+    <pre class="code">numbers = [40, 10, 30, 20, 50]
+
+numbers.sort()
+print(numbers)
+
+numbers.sort(reverse=True)
+print(numbers)
+
+Output:
+<span class="out">[10, 20, 30, 40, 50]
+[50, 40, 30, 20, 10]</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>SORTED() - RETURNS A NEW LIST</h2>
+    <pre class="code">colors = ["red", "green", "blue", "yellow"]
+sorted_colors = sorted(colors)
+
+print(sorted_colors)
+print(colors)
+
+Output:
+<span class="out">['blue', 'green', 'red', 'yellow']
+['red', 'green', 'blue', 'yellow']</span></pre>
+  </section>
+</body>
+</html>

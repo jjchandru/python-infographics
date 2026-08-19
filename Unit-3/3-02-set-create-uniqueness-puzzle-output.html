@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Set Creation & Uniqueness - Output</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.3 - SETS</h1>
+    <span class="page-number">(2)</span>
+  </div>
+  <p class="subtitle">Creating a set and watching duplicates disappear</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">numbers = {4, 2, 2, 3, 4, 1, 3}
+
+print(numbers)
+print(len(numbers))</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code"><span class="out">{1, 2, 3, 4}
+4</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>Sets use curly braces <code class="code-small">{}</code> — list <code class="code-small">[]</code>, tuple <code class="code-small">()</code>.</li>
+      <li>Seven values typed, only 4 distinct values kept.</li>
+      <li><code class="code-small">len(numbers)</code> confirms it — 4, not 7.</li>
+      <li>Set item order is unpredictable.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Objects, Attributes &amp; Functions</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .expr-syntax {
+    font-size: 1.05rem;
+  }
+  dl {
+    margin-top: 0;
+  }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.1 - LISTS</h1>
+    <span class="page-number">(7)</span>
+  </div>
+  <p class="subtitle">How the dot operator connects you to an object</p>
+
+  <section class="box">
+    <h2>OBJECTS, ATTRIBUTES &amp; FUNCTIONS</h2>
+    <p>A fountain pen is an <strong>object</strong> — it holds data and can perform actions.</p>
+    <dl>
+      <dt>ink_level</dt><dd> Attribute — how many ml of ink it holds</dd>
+      <dt>open(), close(), write()</dt><dd> Functions — actions the pen can perform</dd>
+    </dl>
+  </section>
+
+  <section class="box">
+    <h2>SYNTAX - DOT OPERATOR</h2>
+    <pre class="code expr-syntax"><span class="field">{object}</span><span class="op">.</span><span class="field">{attribute}</span></pre>
+    <pre class="code expr-syntax"><span class="field">{object}</span><span class="op">.</span><span class="field">{function_name}</span>(<span class="field">{args}</span>)</pre>
+    <pre class="code">pen<span class="op">.</span>ink_level
+pen<span class="op">.</span>open()
+pen<span class="op">.</span>write("hello")
+pen<span class="op">.</span>close()</pre>
+    <p>The <strong>dot operator</strong> reaches into an object to access its attributes or call its functions.</p>
+  </section>
+
+  <section class="box">
+    <h2>BACK TO OUR LIST</h2>
+    <p><strong>colors</strong> is an object too — it contains various functions.</p>
+    <pre class="code">colors<span class="op">.</span>append("yellow")</pre>
+  </section>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - List Methods</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    table {
+        font-size: 0.9rem;
+    }
+    th, td {
+        padding: 4px 6px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.1 - LISTS</h1>
+    <span class="page-number">(8)</span>
+  </div>
+  <p class="subtitle">Built-in list methods</p>
+
+  <section class="box">
+    <h2>METHOD REFERENCE</h2>
+    <table>
+      <tr><th>Method</th><th>Parameters</th><th>How it works</th></tr>
+      <tr><td>append</td><td>item</td><td>Adds item to the end of the list</td></tr>
+      <tr><td>insert</td><td>index, item</td><td>Inserts item at the given index</td></tr>
+      <tr><td>remove</td><td>value</td><td>Removes the first matching value</td></tr>
+      <tr><td>pop</td><td>index (default: last)</td><td>Removes item at index and returns it</td></tr>
+      <tr><td>extend</td><td>list</td><td>Adds all items from the list to the end</td></tr>
+      <tr><td>index</td><td>value</td><td>Returns the index of the first matching value</td></tr>
+      <tr><td>count</td><td>value</td><td>Returns how many times value occurs</td></tr>
+      <tr><td>clear</td><td>&mdash;</td><td>Removes all items from the list</td></tr>
+    </table>
+  </section>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">colors = ["red", "orange", "green", "yellow"]
+
+removed = colors.pop()
+print(removed)   <span class="comment"># yellow</span>
+print(colors)    <span class="comment"># ['red', 'orange', 'green']</span>
+
+colors.extend(["pink", "black"])
+print(colors)    <span class="comment"># ['red', 'orange', 'green', 'pink', 'black']</span>
+
+print(colors.index("green"))  <span class="comment"># 2</span>
+print(colors.count("red"))    <span class="comment"># 1</span>
+
+colors.clear()
+print(colors)             <span class="comment"># []</span></pre>
+  </section>
+</body>
+</html>

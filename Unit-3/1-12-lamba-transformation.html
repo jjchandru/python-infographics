@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - def to Lambda Transformation</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 17px;
+    }
+    .strike {
+        color: #d2691e;
+        text-decoration-line: line-through;
+        text-decoration-color: #000;
+        text-decoration-thickness: 2px;
+    }
+    .expr-syntax {
+        font-size: 1.05rem;
+    }
+    dl {
+        margin-top: 0;
+    }
+    ol {
+        padding: 0 24px;
+        margin: 8px 0;
+    }
+    ol li {
+        margin-bottom: 4px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.1 - LISTS</h1>
+    <span class="page-number">(12)</span>
+  </div>
+  <p class="subtitle">From def to lambda — same function, one line</p>
+
+  <section class="box">
+    <h2>NORMAL FUNCTION (def)</h2>
+    <pre class="code">def square(x):
+    return x * x
+
+print(square(5))</pre>
+  </section>
+
+  <section class="box">
+    <h2>TRANSFORMATION</h2>
+    <pre class="code"><span class="strike">def</span> <span class="strike">square</span><span class="strike">(</span>x<span class="strike">)</span>:
+    <span class="strike">return</span> x * x</pre>
+  </section>
+
+  <section class="box">
+    <h2>LAMBDA EXPRESSION</h2>
+    <p><strong>Lambda Expression Transformation Steps:</strong></p>
+    <ol>
+      <li>Remove the struck-out parts</li>
+      <li>Bring together remaining parts in the same line</li>
+      <li>Prefix with "lambda" keyword</li>
+      <li>This expression now represents a function without a name, called an anonymous function</li>
+      <li>It has no name of its own, but a variable can still point to it and call it</li>
+    </ol>
+    <pre class="code">lambda x: x * x</pre>
+  </section>
+
+  <section class="box">
+    <h2>SYNTAX - LAMBDA</h2>
+    <pre class="code expr-syntax">lambda <span class="field">{lambda-expression}</span></pre>
+    <pre class="code expr-syntax"><span class="field">{lambda-expression}</span> <span class="op">-</span> <span class="out">{parameters}</span>: <span class="out">{expression}</span></pre>
+    <dl>
+      <dt>lambda</dt><dd> Keyword that creates an anonymous function</dd>
+      <dt class="field">{lambda-expression}</dt><dd> The parameter(s) and body together</dd>
+      <dt class="field">{parameters}</dt><dd> Comma-separate for multiple: x, y</dd>
+      <dt class="field">{expression}</dt><dd> Single expression, returned automatically (no return keyword)</dd>
+    </dl>
+  </section>
+</body>
+</html>
