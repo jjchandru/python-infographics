@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Counter</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.5 - ITERATORS</h1>
+    <span class="page-number">(5)</span>
+  </div>
+  <p class="subtitle">The built-in shortcut for counting into a dictionary</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">votes = ["Mango", "Apple", "Mango", "Banana", "Mango", "Apple"]
+
+<span class="comment"># what you already know</span>
+counts = {}
+for fruit in votes:
+    counts[fruit] = counts.get(fruit, 0) + 1
+print(counts)
+
+<span class="comment"># same result, one line</span>
+from collections import Counter
+counts = Counter(votes)
+print(counts)
+
+<span class="comment"># convert back to a plain dict</span>
+plain_dict = dict(counts)
+print(plain_dict)
+
+Output:
+<span class="out">{'Mango': 3, 'Apple': 2, 'Banana': 1}
+Counter({'Mango': 3, 'Apple': 2, 'Banana': 1})
+{'Mango': 3, 'Apple': 2, 'Banana': 1}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">Counter(votes)</code> does in one line what the <code class="code-small">counts.get(fruit, 0) + 1</code> loop did by hand.</li>
+      <li><code class="code-small">Counter</code> behaves like a dict everywhere it matters &mdash; square brackets, <code class="code-small">.items()</code>, looping, all work the same.</li>
+      <li><code class="code-small">print()</code> labels it as <code class="code-small">Counter({...})</code> instead of plain <code class="code-small">{...}</code>, just so you can tell what created it &mdash; day to day you use it exactly like the dicts you already know.</li>
+      <li><code class="code-small">dict(counts)</code> converts it into a plain dict, if you specifically need one &mdash; <code class="code-small">plain_dict</code> now prints without the <code class="code-small">Counter(...)</code> label.</li>
+    </ul>
+  </section>
+</body>
+</html>

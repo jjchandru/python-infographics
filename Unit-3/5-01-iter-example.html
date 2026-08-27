@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Iterables vs Iterators</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.5 - ITERATORS</h1>
+    <span class="page-number">(1)</span>
+  </div>
+  <p class="subtitle">A list supports indexing. An iterator does not.</p>
+
+  <section class="box">
+    <h2>LIST vs ITERATOR - INDEXING</h2>
+    <pre class="code">numbers = [1, 2, 3]  <span class="comment"># list is iterable</span>
+print(numbers[1])
+
+it = iter(numbers)  <span class="comment"># 'it' is an iterator</span>
+print(it[1])
+
+Output:
+<span class="out">2</span>
+<span class="error">TypeError: 'list_iterator' object is not subscriptable</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>NEXT() AND EXHAUSTION</h2>
+    <pre class="code">numbers = [1, 2, 3]
+it = iter(numbers)
+
+print(next(it))
+print(next(it))
+print(next(it))
+print(next(it))
+
+Output:
+<span class="out">1
+2
+3</span>
+<span class="error">StopIteration</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">iter(numbers)</code> converts the list into an iterator &mdash; a different kind of object, not just the same list in a new wrapper.</li>
+      <li>An iterator has no positions to jump to &mdash; <code class="code-small">it[1]</code> fails because "give me item 1" is a list operation, not an iterator one.</li>
+      <li><code class="code-small">next(it)</code> is the only way to get values out &mdash; one at a time, always in order, never backwards.</li>
+      <li>Once all values are used up, <code class="code-small">next(it)</code> raises <code class="code-small">StopIteration</code> instead of returning anything &mdash; the iterator doesn't reset or loop back to the start.</li>
+      <li>Use an iterator when you only need to walk through values once, in order, and don't need to jump around &mdash; e.g. reading a huge file line by line without loading the whole thing into memory first. A <code class="code-small">for</code> loop already does this under the hood: it calls <code class="code-small">next()</code> for you until <code class="code-small">StopIteration</code> stops it.</li>
+    </ul>
+  </section>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - defaultdict</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 15px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.5 - ITERATORS</h1>
+    <span class="page-number">(6)</span>
+  </div>
+  <p class="subtitle">The built-in shortcut for grouping into a dictionary of lists</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">votes = [
+    ["Ravi","Mango"],
+    ["Anu","Apple"],
+    ["Kiran","Mango"],
+    ["Divya","Banana"],
+    ["Sara","Mango"],
+    ["Rahul","Apple"]
+]
+
+<span class="comment"># what you already know</span>
+result = {}
+for name, fruit in votes:
+    result.setdefault(fruit, []).append(name)
+print(result)
+
+<span class="comment"># same result, no setdefault needed</span>
+from collections import defaultdict
+grouped = defaultdict(list)
+for name, fruit in votes:
+    grouped[fruit].append(name)
+print(grouped)
+
+<span class="comment"># convert back to a plain dict</span>
+plain_dict = dict(grouped)
+print(plain_dict)
+
+Output:
+<span class="out">{'Mango': ['Ravi', 'Kiran', 'Sara'], 'Apple': ['Anu', 'Rahul'], 'Banana': ['Divya']}
+defaultdict(&lt;class 'list'&gt;, {'Mango': ['Ravi', 'Kiran', 'Sara'], 'Apple': ['Anu', 'Rahul'], 'Banana': ['Divya']})
+{'Mango': ['Ravi', 'Kiran', 'Sara'], 'Apple': ['Anu', 'Rahul'], 'Banana': ['Divya']}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">defaultdict(list)</code> means "if a key doesn't exist yet, automatically create it with an empty list" &mdash; so <code class="code-small">grouped[fruit].append(name)</code> never fails, even on a fruit's first appearance.</li>
+      <li>No <code class="code-small">setdefault()</code> call needed at all &mdash; the default behaviour is built into <code class="code-small">grouped</code> itself.</li>
+      <li><code class="code-small">print(grouped)</code> labels it as <code class="code-small">defaultdict(&lt;class 'list'&gt;, {...})</code>, same reason <code class="code-small">Counter</code> showed its own label &mdash; it still behaves like a dict everywhere it matters.</li>
+      <li><code class="code-small">dict(grouped)</code> converts it into a plain dict, same trick as the <code class="code-small">Counter</code> page.</li>
+    </ul>
+  </section>
+</body>
+</html>

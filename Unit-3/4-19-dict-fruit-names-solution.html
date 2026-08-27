@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Names By Fruit - Solution</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 15px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.4 - DICTIONARIES</h1>
+    <span class="page-number">(19)</span>
+  </div>
+  <p class="subtitle">Collecting names into a dictionary of lists, built with setdefault()</p>
+
+  <section class="box">
+    <h2>SOLUTION</h2>
+    <pre class="code">votes = [
+    ["Ravi","Mango"],
+    ["Anu","Apple"],
+    ["Kiran","Mango"],
+    ["Divya","Banana"],
+    ["Sara","Mango"],
+    ["Rahul","Apple"]
+]
+
+result = {}
+for name, fruit in votes:
+    result.setdefault(fruit, []).append(name)
+
+print(result)
+
+Output:
+<span class="out">{'Mango': ['Ravi', 'Kiran', 'Sara'], 'Apple': ['Anu', 'Rahul'], 'Banana': ['Divya']}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">for name, fruit in votes</code> unpacks each inner list the same way it would a tuple &mdash; position 0 into <code class="code-small">name</code>, position 1 into <code class="code-small">fruit</code>.</li>
+      <li><code class="code-small">result.setdefault(fruit, [])</code> is the list version of the same idea behind <code class="code-small">counts.get(fruit, 0)</code> on the previous solution &mdash; except here the "default" is an empty list, and it gets inserted into the dict, not just returned.</li>
+      <li><code class="code-small">.append(name)</code> then grows that list in place, whether it was just created or already had names in it.</li>
+    </ul>
+  </section>
+</body>
+</html>

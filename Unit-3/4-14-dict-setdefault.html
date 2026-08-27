@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Dictionary setdefault()</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.4 - DICTIONARIES</h1>
+    <span class="page-number">(14)</span>
+  </div>
+  <p class="subtitle">get() with a side effect: insert the key if it's missing</p>
+
+  <section class="box">
+    <h2>SETDEFAULT()</h2>
+    <pre class="code">student = {"name": "Ravi", "age": 20, "dept": "CSE"}
+
+result = student.setdefault("year", 1)
+print(student)
+print(result)
+
+Output:
+<span class="out">{'name': 'Ravi', 'age': 20, 'dept': 'CSE', 'year': 1}
+1</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">setdefault(key, default)</code> is <code class="code-small">get()</code> with a side effect: if the key is missing, it inserts it with the default value.</li>
+      <li>It also returns the value now stored under that key &mdash; here, <code class="code-small">1</code>.</li>
+    </ul>
+  </section>
+</body>
+</html>

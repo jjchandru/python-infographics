@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Dictionary del</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.4 - DICTIONARIES</h1>
+    <span class="page-number">(6)</span>
+  </div>
+  <p class="subtitle">Deleting a key-value pair with del</p>
+
+  <section class="box">
+    <h2>KEY EXISTS</h2>
+    <pre class="code">student = {"name": "Ravi", "age": 20, "dept": "CSE"}
+
+del student["dept"]
+print(student)
+
+Output:
+<span class="out">{'name': 'Ravi', 'age': 20}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>KEY MISSING</h2>
+    <pre class="code">student = {"name": "Ravi", "age": 20, "dept": "CSE"}
+
+del student["year"]
+
+Output:
+<span class="error">KeyError: 'year'</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">del dict_name[key]</code> removes the pair entirely &mdash; nothing is returned.</li>
+      <li>If the key does not exist, <code class="code-small">del</code> raises a KeyError.</li>
+      <li><code class="code-small">del</code> is a statement, not a method &mdash; no parentheses, no dot before it.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

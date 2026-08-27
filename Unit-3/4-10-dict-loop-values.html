@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Looping Through Dictionary Values</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.4 - DICTIONARIES</h1>
+    <span class="page-number">(10)</span>
+  </div>
+  <p class="subtitle">Looping through values using values()</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">student = {"name": "Ravi", "age": 20, "dept": "CSE"}
+
+for value in student.values():
+    print(value)
+
+Output:
+<span class="out">Ravi
+20
+CSE</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">values()</code> gives just the values, one per iteration &mdash; no keys at all.</li>
+      <li>Use this form when you only care about the data itself, e.g. summing all the ages in a list of records.</li>
+      <li>There is no <code class="code-small">student[value]</code> shortcut here &mdash; without <code class="code-small">.items()</code> or <code class="code-small">.keys()</code>, the matching key is not available inside this loop.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Nested Dictionaries</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.4 - DICTIONARIES</h1>
+    <span class="page-number">(12)</span>
+  </div>
+  <p class="subtitle">A dictionary within a dictionary &mdash; one record per key</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">college = {
+    "21CS045": {
+        "name": "Ravi",
+        "age": 20,
+        "dept": "CSE"
+    },
+    "21CS046": {
+        "name": "Anu",
+        "age": 19,
+        "dept": "IT"
+    }
+}
+
+print(college["21CS045"])
+print(college["21CS045"]["name"])
+
+Output:
+<span class="out">{'name': 'Ravi', 'age': 20, 'dept': 'CSE'}
+Ravi</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>The outer dict is keyed by RRR number &mdash; unique per student, so it works as a lookup index for the whole college.</li>
+      <li>Each value is itself a dict &mdash; the student's own record (name, age, dept).</li>
+      <li><code class="code-small">college["21CS045"]</code> jumps straight to that one student's record, no scanning through every entry.</li>
+      <li>Chain a second key to reach a single field inside that record: <code class="code-small">college["21CS045"]["name"]</code>.</li>
+    </ul>
+  </section>
+</body>
+</html>

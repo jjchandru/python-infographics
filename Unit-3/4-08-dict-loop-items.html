@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Looping Through Dictionary Items</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.4 - DICTIONARIES</h1>
+    <span class="page-number">(8)</span>
+  </div>
+  <p class="subtitle">Looping through key-value pairs together using items()</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">student = {"name": "Ravi", "age": 20, "dept": "CSE"}
+
+for key, value in student.items():
+    print(key, "->", value)
+
+Output:
+<span class="out">name -> Ravi
+age -> 20
+dept -> CSE</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>WITHOUT UNPACKING</h2>
+    <pre class="code">student = {"name": "Ravi", "age": 20, "dept": "CSE"}
+
+for pair in student.items():
+    print(pair[0], "->", pair[1])
+
+Output:
+<span class="out">name -> Ravi
+age -> 20
+dept -> CSE</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">items()</code> gives each pair as a <code class="code-small">(key, value)</code> tuple, unpacked here into two loop variables.</li>
+      <li>Use this form when you need both the key and the value inside the loop body.</li>
+      <li>The unpacking is optional &mdash; <code class="code-small">key, value = pair</code> is just a convenience. Without it, <code class="code-small">pair</code> is still a tuple, so <code class="code-small">pair[0]</code> and <code class="code-small">pair[1]</code> work exactly as they did on Unit 3.4's sorting page.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

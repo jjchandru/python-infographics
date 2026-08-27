@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Count By Fruit - Solution</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 15px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.4 - DICTIONARIES</h1>
+    <span class="page-number">(17)</span>
+  </div>
+  <p class="subtitle">Counting votes into a dictionary, built from scratch</p>
+
+  <section class="box">
+    <h2>SOLUTION</h2>
+    <pre class="code">def count_by_fruit(votes):
+    counts = {}
+    for fruit in votes:
+        counts[fruit] = counts.get(fruit, 0) + 1
+    return counts
+
+votes = ["Mango", "Apple", "Mango", "Banana", "Mango", "Apple"]
+
+print(count_by_fruit(votes))
+
+Output:
+<span class="out">{'Mango': 3, 'Apple': 2, 'Banana': 1}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">counts</code> starts empty &mdash; there's no special-case handling for a fruit's first vote.</li>
+      <li><code class="code-small">counts.get(fruit, 0) + 1</code> is the same accumulate-with-get() idiom from the earlier puzzle: 0 the first time a fruit appears, the running count every time after.</li>
+      <li>One line inside the loop handles every fruit, first vote or fiftieth.</li>
+    </ul>
+  </section>
+</body>
+</html>

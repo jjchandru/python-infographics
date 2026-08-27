@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Generators</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.5 - ITERATORS</h1>
+    <span class="page-number">(2)</span>
+  </div>
+  <p class="subtitle">A function that remembers where it left off, using yield</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">def count_up():
+    print("returning 1")
+    yield 1
+    print("returning 2")
+    yield 2
+    print("returning 3")
+    yield 3
+
+gen = count_up()
+print(gen)
+print("Generator created")
+
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
+
+Output:
+<span class="out">&lt;generator object count_up at 0x001A2B3C4D5E6&gt;
+Generator created
+returning 1
+1
+returning 2
+2
+returning 3
+3</span>
+<span class="error">StopIteration</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>Calling <code class="code-small">count_up()</code> doesn't run any of the function's code yet &mdash; notice neither "returning 1" nor anything else from inside the function appears before "Generator created". It just hands back a generator object, <code class="code-small">gen</code>, without starting execution.</li>
+      <li><code class="code-small">print(gen)</code> shows <code class="code-small">&lt;generator object count_up at ...&gt;</code> &mdash; the memory address changes every run and isn't important; what matters is the type, "generator object," proving <code class="code-small">gen</code> is not the value 1, 2, or 3, just something that can produce them later.</li>
+      <li>Each <code class="code-small">next(gen)</code> resumes the function exactly where it paused last time &mdash; that's why <code class="code-small">"returning 2"</code> only appears on the second call, not the first.</li>
+      <li><code class="code-small">yield</code> is like <code class="code-small">return</code>, except the function pauses instead of ending, keeping all its local state intact until the next <code class="code-small">next()</code> call.</li>
+      <li>Once the function runs off the end with no more <code class="code-small">yield</code> left, the fourth <code class="code-small">next(gen)</code> raises <code class="code-small">StopIteration</code> &mdash; same exhaustion behaviour as the iterator on the previous page.</li>
+      <li>Values are produced one at a time, only when asked for, instead of all being built and stored up front &mdash; this is what "lazy evaluation" means.</li>
+    </ul>
+  </section>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Looping Through Dictionary Keys</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.4 - DICTIONARIES</h1>
+    <span class="page-number">(9)</span>
+  </div>
+  <p class="subtitle">Looping through keys using keys()</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">student = {"name": "Ravi", "age": 20, "dept": "CSE"}
+
+for key in student.keys():
+    print(key)
+
+Output:
+<span class="out">name
+age
+dept</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">keys()</code> gives just the keys, one per iteration.</li>
+      <li><code class="code-small">for key in student:</code> does the same thing &mdash; looping over a dict directly loops over its keys, so <code class="code-small">.keys()</code> is optional but makes the intent explicit.</li>
+      <li>Use <code class="code-small">student[key]</code> inside the loop if the value is also needed.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

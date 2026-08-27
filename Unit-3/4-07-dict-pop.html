@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Dictionary pop()</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.4 - DICTIONARIES</h1>
+    <span class="page-number">(7)</span>
+  </div>
+  <p class="subtitle">Deleting a key-value pair and keeping its value with pop()</p>
+
+  <section class="box">
+    <h2>KEY EXISTS</h2>
+    <pre class="code">student = {"name": "Ravi", "age": 20, "dept": "CSE"}
+
+removed_dept = student.pop("dept")
+print(student)
+print(removed_dept)
+
+Output:
+<span class="out">{'name': 'Ravi', 'age': 20}
+CSE</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>KEY MISSING</h2>
+    <pre class="code">student = {"name": "Ravi", "age": 20, "dept": "CSE"}
+
+student.pop("year")
+
+Output:
+<span class="error">KeyError: 'year'</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">dict_name.pop(key)</code> removes the pair and <strong>returns the value</strong> &mdash; unlike <code class="code-small">del</code>, which returns nothing.</li>
+      <li>Missing key with no default still raises a KeyError, same as <code class="code-small">del</code>.</li>
+      <li>A second argument sets a fallback instead of erroring &mdash; <code class="code-small">student.pop("year", None)</code> returns <code class="code-small">None</code> instead of raising.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

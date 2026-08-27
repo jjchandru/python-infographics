@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - namedtuple</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.5 - ITERATORS</h1>
+    <span class="page-number">(7)</span>
+  </div>
+  <p class="subtitle">A tuple whose slots have names, not just positions</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">from collections import namedtuple
+
+Student = namedtuple("Student", ["name", "age", "dept"])
+
+s = Student("Ravi", 20, "CSE")
+
+print(s.name)
+print(s[0])
+
+Output:
+<span class="out">Ravi
+Ravi</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">s.name</code> reads like a label instead of a position, but <code class="code-small">s[0]</code> still works too &mdash; it's still an ordinary tuple underneath.</li>
+      <li><code class="code-small">s.name = "Kiran"</code> would fail, same as any other tuple &mdash; it's still immutable, only the <em>reading</em> got friendlier.</li>
+    </ul>
+  </section>
+</body>
+</html>

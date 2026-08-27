@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Dictionary Add</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.4 - DICTIONARIES</h1>
+    <span class="page-number">(4)</span>
+  </div>
+  <p class="subtitle">Adding a new key-value pair by assignment</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">student = {"name": "Ravi", "age": 20, "dept": "CSE"}
+
+student["year"] = 2
+print(student)
+
+Output:
+<span class="out">{'name': 'Ravi', 'age': 20, 'dept': 'CSE', 'year': 2}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">dict_name[key] = value</code> adds a new pair when the key does not already exist.</li>
+      <li>The new pair is added at the end; dictionaries keep insertion order.</li>
+      <li>No error is raised, whether or not the key already existed &mdash; see MODIFY for that case.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

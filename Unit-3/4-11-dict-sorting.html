@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Sorting Dictionaries</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.4 - DICTIONARIES</h1>
+    <span class="page-number">(11)</span>
+  </div>
+  <p class="subtitle">Sorting a dictionary's pairs by key, or by value</p>
+
+  <section class="box">
+    <h2>SORT BY KEY</h2>
+    <pre class="code">scores = {"Ravi": 88, "Anu": 95, "Kiran": 72}
+
+for key in sorted(scores):
+    print(key, "->", scores[key])
+
+Output:
+<span class="out">Anu -> 95
+Kiran -> 72
+Ravi -> 88</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>SORT BY VALUE</h2>
+    <pre class="code">scores = {"Ravi": 88, "Anu": 95, "Kiran": 72}
+
+for key, value in sorted(scores.items(), key=lambda pair: pair[1]):
+    print(key, "->", value)
+
+Output:
+<span class="out">Kiran -> 72
+Ravi -> 88
+Anu -> 95</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">sorted(scores)</code> sorts the keys directly &mdash; a dict, like a list, is sortable because <code class="code-small">sorted()</code> just needs something iterable.</li>
+      <li>Sorting by value needs <code class="code-small">.items()</code> plus a <code class="code-small">key=</code> function, because <code class="code-small">sorted()</code> has no way to know "value" means the second half of each pair on its own.</li>
+      <li><code class="code-small">sorted()</code> always returns a new list &mdash; the original dict's insertion order never changes; there is no in-place <code class="code-small">.sort()</code> for dictionaries.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

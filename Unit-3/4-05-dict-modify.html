@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Dictionary Modify</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.4 - DICTIONARIES</h1>
+    <span class="page-number">(5)</span>
+  </div>
+  <p class="subtitle">Modifying an existing value by assignment</p>
+
+  <section class="box">
+    <h2>EXAMPLE</h2>
+    <pre class="code">student = {"name": "Ravi", "age": 20, "dept": "CSE"}
+
+student["age"] = 21
+print(student)
+
+Output:
+<span class="out">{'name': 'Ravi', 'age': 21, 'dept': 'CSE'}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>Same syntax as ADD &mdash; <code class="code-small">dict_name[key] = value</code>.</li>
+      <li>Because <code class="code-small">"age"</code> already exists, the old value (20) is overwritten instead of a new pair being created.</li>
+      <li>No new key is added and the dict's length does not change.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

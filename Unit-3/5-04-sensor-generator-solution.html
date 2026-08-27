@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Sensor Reading Generator - Solution</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.5 - ITERATORS</h1>
+    <span class="page-number">(4)</span>
+  </div>
+  <p class="subtitle">Simulating a live data stream with a generator</p>
+
+  <section class="box">
+    <h2>SOLUTION</h2>
+    <pre class="code">import random
+
+def sensor_readings(start):
+    current = start
+    while True:
+        current += random.uniform(-1.0, 1.0)
+        yield round(current, 1)
+
+
+readings = sensor_readings(25.0)
+
+print(next(readings))
+print(next(readings))
+print(next(readings))
+
+Output (values will differ every run &mdash; that's
+the point, each reading is generated live):
+<span class="out">24.6
+25.3
+24.9</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">current</code> lives inside the generator and survives between calls &mdash; each <code class="code-small">next(readings)</code> resumes right where it paused, still remembering the last value.</li>
+      <li>A plain <code class="code-small">random.uniform()</code> call couldn't do this alone &mdash; it has no memory of the last reading, so it can't drift from it. Something has to hold onto <code class="code-small">current</code> between calls, and the generator's paused state does that for free.</li>
+      <li>The <code class="code-small">while True</code> means the sensor can be polled forever &mdash; there's no fixed number of readings decided in advance, matching a real device that just keeps running.</li>
+    </ul>
+  </section>
+</body>
+</html>

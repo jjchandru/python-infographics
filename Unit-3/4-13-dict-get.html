@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Dictionary get()</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 3.4 - DICTIONARIES</h1>
+    <span class="page-number">(13)</span>
+  </div>
+  <p class="subtitle">Looking up a key safely with get()</p>
+
+  <section class="box">
+    <h2>SQUARE BRACKETS - KEY MISSING</h2>
+    <pre class="code">student = {"name": "Ravi", "age": 20, "dept": "CSE"}
+
+print(student["year"])
+
+Output:
+<span class="error">KeyError: 'year'</span></pre>
+    <dl>
+      <dt>note</dt><dd>This is overcome by using the <span class="op">get()</span> function &mdash; see the next box.</dd>
+    </dl>
+  </section>
+
+  <section class="box">
+    <h2>GET()</h2>
+    <pre class="code">student = {"name": "Ravi", "age": 20, "dept": "CSE"}
+
+print(student.get("age"))
+print(student.get("year"))
+print(student.get('Year', 2026))
+
+Output:
+<span class="out">20
+None
+2026</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">student["year"]</code> raises a KeyError because <code class="code-small">"year"</code> is not a key in the dict.</li>
+      <li><code class="code-small">student.get("year")</code> checks for the key the same way, but returns <code class="code-small">None</code> instead of raising &mdash; the program keeps running.</li>
+      <li><code class="code-small">student.get("Year", 2026)</code> shows the optional second argument &mdash; a fallback value returned instead of <code class="code-small">None</code> when the key is missing.</li>
+      <li>Use <code class="code-small">get()</code> whenever a missing key is a normal possibility, not a bug.</li>
+    </ul>
+  </section>
+</body>
+</html>
