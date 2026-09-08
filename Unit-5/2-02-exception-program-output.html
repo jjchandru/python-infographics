@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Exception Program Output</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.2 - ERRORS &amp; EXCEPTIONS</h1>
+    <span class="page-number">(2)</span>
+  </div>
+  <p class="subtitle">Let's run it and see what actually happens</p>
+
+  <section class="box">
+    <h2>PROGRAM</h2>
+    <pre class="code">age = input("Enter your age: ")
+age = int(age)
+print("Age: ", age)</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code">Enter your age: <span class="out">ten</span>
+
+<span class="error">ValueError: invalid literal for int() with base 10: 'ten'</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>Line 1 runs fine &mdash; <code class="code-small">age</code> now holds the text <code class="code-small">"ten"</code>.</li>
+      <li>Line 2 fails &mdash; <code class="code-small">int("ten")</code> cannot convert the word "ten" into a number, so Python raises a <code class="code-small">ValueError</code>.</li>
+      <li>The program stops right there. Line 3 never runs, so <code class="code-small">print("Age: ", age)</code> does not execute &mdash; the age is never printed.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

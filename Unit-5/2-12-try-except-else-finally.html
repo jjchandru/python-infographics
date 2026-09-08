@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Try Except Else Finally</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 17px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.2 - ERRORS &amp; EXCEPTIONS</h1>
+    <span class="page-number">(12)</span>
+  </div>
+  <p class="subtitle">The full shape: multiple except, else, finally</p>
+
+  <section class="box">
+    <h2>CODE</h2>
+    <pre class="code"><span class="keyword">try</span>:
+    print("try block")
+<span class="keyword">except</span> <span class="exception">ValueError</span>:
+    print("ValueError occurred")
+<span class="keyword">except</span> <span class="exception">ZeroDivisionError</span>:
+    print("ZeroDivisionError occurred")
+<span class="keyword">else</span>:
+    print("else: runs when no exception")
+<span class="keyword">finally</span>:
+    print("finally: always runs")</pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>Python checks the <code class="code-small">except</code> blocks in order and runs the first one whose exception type matches.</li>
+      <li><code class="code-small">else</code> runs only when the <code class="code-small">try</code> block completes with no exception at all.</li>
+      <li><code class="code-small">finally</code> always runs &mdash; exception or not, handled or not &mdash; commonly used for cleanup.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

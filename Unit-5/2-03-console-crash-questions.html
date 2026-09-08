@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Exception Console Crash</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    ol {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.8;
+    }
+    ol li {
+        margin-bottom: 6px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.2 - ERRORS &amp; EXCEPTIONS</h1>
+    <span class="page-number">(3)</span>
+  </div>
+  <p class="subtitle">Now imagine this is a real registration form</p>
+
+  <section class="box">
+    <h2>CONSOLE</h2>
+    <pre class="console">========================================
+      STUDENT REGISTRATION SYSTEM
+========================================
+
+--- New Student Form ---
+
+Name: Priyadharshini K
+Roll Number: 30279384983
+College Name: B S Abdur Rahman Crescent Engineering College
+Age: ten
+
+Traceback (most recent call last):
+  File "D:\student_registration.py", line 5, in &lt;module&gt;
+    age = int(age)
+          ^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'ten'</pre>
+  </section>
+
+  <section class="box">
+    <h2>QUESTIONS</h2>
+    <ol>
+      <li>What would a student feel after seeing the error?</li>
+      <li>The data from field 1 has to be typed again. Is it fair?</li>
+      <li>What should happen when bad input is entered?</li>
+      <li>The message <code class="code-small">ValueError: invalid literal for int()...</code> is meant for a programmer. What should they see instead?</li>
+      <li>What must the program do to avoid this frustration?</li>
+    </ol>
+  </section>
+
+  <section class="box">
+    <h2>INSTRUCTION</h2>
+    <p>In your notebook, write only the question number and your answer &mdash; no need to copy the question.</p>
+  </section>
+
+</body>
+</html>

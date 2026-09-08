@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Syntax Error Explanation</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.2 - ERRORS &amp; EXCEPTIONS</h1>
+    <span class="page-number">(9)</span>
+  </div>
+  <p class="subtitle">A colon is missing after the condition</p>
+
+  <section class="box">
+    <h2>CODE</h2>
+    <pre class="code">age = 20
+<span class="keyword">if</span> age > 18
+    print("Adult")</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code"><span class="exception">SyntaxError</span>: expected ':'</pre>
+  </section>
+
+  <section class="box">
+    <h2>CODE</h2>
+    <pre class="code">print("Hello")
+    print("World")</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code"><span class="exception">IndentationError</span>: unexpected indent</pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>An <code class="code-small">if</code> statement must end with a colon &mdash; it is missing in the first example.</li>
+      <li>The second <code class="code-small">print</code> line is indented for no reason &mdash; Python does not expect a new block there.</li>
+      <li>Python finds both problems while reading the file, before running anything &mdash; not even the first line of either snippet executes.</li>
+      <li>These are both <b>syntax errors</b>. <code class="code-small">IndentationError</code> is simply a specific kind of syntax error &mdash; bad spacing, not bad logic.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

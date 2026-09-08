@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Raising Exceptions</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 16px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.2 - ERRORS &amp; EXCEPTIONS</h1>
+    <span class="page-number">(15)</span>
+  </div>
+  <p class="subtitle">Triggering an exception on purpose</p>
+
+  <section class="box">
+    <h2>CODE</h2>
+    <pre class="code"><span class="keyword">def</span> set_age(age):
+    <span class="keyword">if</span> age &lt; 0:
+        <span class="keyword">raise</span> <span class="exception">ValueError</span>("Age cannot be -ve")
+    print("Age set to", age)
+
+set_age(-5)</pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>The <code class="code-small">raise</code> statement lets our own code trigger an exception on purpose, instead of waiting for Python to raise one.</li>
+      <li>Here, if <code class="code-small">age</code> is negative, we raise a <code class="code-small">ValueError</code> with our own message before any invalid value gets used.</li>
+      <li>Once raised, it behaves like any other exception &mdash; it can be caught with <code class="code-small">try</code>/<code class="code-small">except</code>, or left to crash the program if nothing catches it.</li>
+      <li>To handle exceptions specific to our application, our own <span style="color:#000; font-weight:bold;">custom exceptions</span> can be defined.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

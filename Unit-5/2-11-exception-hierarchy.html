@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Exception Hierarchy</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.2 - ERRORS &amp; EXCEPTIONS</h1>
+    <span class="page-number">(11)</span>
+  </div>
+  <p class="subtitle">Every exception belongs to a family tree</p>
+
+  <section class="box">
+    <h2>THE EXCEPTION HIERARCHY</h2>
+    <pre class="code">BaseException
+   Exception
+      <span class="exception">ValueError</span>
+      <span class="exception">TypeError</span>
+      <span class="exception">ZeroDivisionError</span>
+      <span class="exception">KeyError</span>
+      ...</pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>Every exception in this tree is a <b>class</b></li>
+      <li><code class="code-small">BaseException</code> is the root of everything Python can raise. <code class="code-small">Exception</code> is the branch normal programs catch.</li>
+      <li>All the familiar <code class="code-small">...Error</code> classes &mdash; <code class="code-small">ValueError</code>, <code class="code-small">TypeError</code>, <code class="code-small">ZeroDivisionError</code> &mdash; are subclasses of <code class="code-small">Exception</code>, not a separate category.</li>
+      <li>If we write <code class="code-small">except Exception:</code>, it matches every exception below it in the tree too &mdash; so it ends up handling all of them, not just one specific kind.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

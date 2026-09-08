@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Basic Try Except</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.2 - ERRORS &amp; EXCEPTIONS</h1>
+    <span class="page-number">(4)</span>
+  </div>
+  <p class="subtitle">Let's stop the crash first, using try and except</p>
+
+  <section class="box">
+    <h2>PROGRAM</h2>
+    <pre class="code"><span class="keyword">try</span>:
+    age = input("Enter your age: ")
+    age = int(age)
+    print("Age: ", age)
+<span class="keyword">except</span> <span class="exception">ValueError</span>:
+    print("Invalid number for age.")</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code">Enter your age: <span class="out">ten</span>
+<span class="out">Invalid number for age.</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">try</code> runs the risky code &mdash; the moment <code class="code-small">int(age)</code> fails, Python jumps straight to <code class="code-small">except</code>.</li>
+      <li><code class="code-small">except ValueError</code> catches it and runs its own block instead of crashing &mdash; no traceback this time.</li>
+      <li>The program ends normally. But look closely: it never got the age. The user is not asked again.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

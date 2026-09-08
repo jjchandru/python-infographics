@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Syntax Error vs Exception</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.2 - ERRORS &amp; EXCEPTIONS</h1>
+    <span class="page-number">(10)</span>
+  </div>
+  <p class="subtitle">Same word "wrong" — two very different reasons</p>
+
+  <section class="box">
+    <h2>SYNTAX ERROR &mdash; MISSING COLON</h2>
+    <pre class="code">age = 20
+if age > 18
+    print("Adult")</pre>
+  </section>
+
+  <section class="box">
+    <h2>SYNTAX ERROR &mdash; BAD INDENTATION</h2>
+    <pre class="code">print("Hello")
+    print("World")</pre>
+  </section>
+
+  <section class="box">
+    <h2>EXCEPTION &mdash; INVALID CONVERSION</h2>
+    <pre class="code">age = input("Enter your age: ")
+age = int(age)
+print("Age: ", age)</pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>The first two snippets never get a chance to run &mdash; Python finds the mistake while reading the whole file. These are <b>syntax errors</b>.</li>
+      <li>The third snippet has no syntax mistake. Python starts running it, and it fails only when <code class="code-small">int(age)</code> is executed with <code class="code-small">"ten"</code>. This is an <b>exception</b> &mdash; a problem that shows up while the code is running.</li>
+      <li>A syntax error stops the program before it starts &mdash; there is nothing running yet, so <code class="code-small">try</code>/<code class="code-small">except</code> cannot help.</li>
+      <li>An exception happens while code is already running, so it can be caught with <code class="code-small">try</code>/<code class="code-small">except</code> &mdash; exactly what we did earlier with the while loop.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

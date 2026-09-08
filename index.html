@@ -272,9 +272,28 @@
     "5-07-namedtuple-example.html"
   ];
 
+  var unit5Files = [
+    "2-01-exception-scenario.html",
+    "2-02-exception-program-output.html",
+    "2-03-console-crash-questions.html",
+    "2-04-try-except-basic.html",
+    "2-05-try-except-while-loop.html",
+    "2-06-exception-handling-test.html",
+    "2-07-exception-handling-answer.html",
+    "2-08-syntax-error-puzzle.html",
+    "2-09-syntax-error-explanation.html",
+    "2-10-syntax-vs-exception.html",
+    "2-11-exception-hierarchy.html",
+    "2-12-try-except-else-finally.html",
+    "2-13-grouped-exceptions.html",
+    "2-14-common-exceptions.html",
+    "2-15-raising-exceptions.html"
+  ];
+
   var pages = unit1Files.map(function (f) { return "Unit-1/" + f; })
     .concat(unit2Files.map(function (f) { return "Unit-2/" + f; }))
-    .concat(unit3Files.map(function (f) { return "Unit-3/" + f; }));
+    .concat(unit3Files.map(function (f) { return "Unit-3/" + f; }))
+    .concat(unit5Files.map(function (f) { return "Unit-5/" + f; }));
 
   function pageLabel(filename) {
     var name = filename.replace(/\.html$/, "");
@@ -346,6 +365,7 @@
   buildMenu(1, unit1Files, "Unit-1");
   buildMenu(2, unit2Files, "Unit-2");
   buildMenu(3, unit3Files, "Unit-3");
+  buildMenu(5, unit5Files, "Unit-5");
 
   var currentIndex = 0;
 

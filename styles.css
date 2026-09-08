@@ -144,3 +144,20 @@ p {
   color: #0066cc;
   font-weight: bold;
 }
+
+.exception {
+  color: #d2691e;
+  font-weight: bold;
+}
+
+.console {
+  background: #000;
+  color: #fff;
+  font-family: "Consolas", monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  padding: 16px 18px;
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}

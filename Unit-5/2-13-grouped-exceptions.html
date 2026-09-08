@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Grouped Exceptions</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.2 - ERRORS &amp; EXCEPTIONS</h1>
+    <span class="page-number">(13)</span>
+  </div>
+  <p class="subtitle">One except block, multiple exception types</p>
+
+  <section class="box">
+    <h2>CODE</h2>
+    <pre class="code"><span class="keyword">try</span>:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+    print("Result:", result)
+<span class="keyword">except</span> (<span class="exception">ValueError</span>, <span class="exception">ZeroDivisionError</span>):
+    print("Enter a non-zero number.")</pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li>Multiple exception types can be grouped into one <code class="code-small">except</code> clause using a tuple: <code class="code-small">except (ValueError, ZeroDivisionError):</code>.</li>
+      <li>This block runs if <b>either</b> exception occurs &mdash; useful when the same handling logic applies to more than one exception type.</li>
+      <li>This is different from writing separate <code class="code-small">except</code> blocks, which is needed only when each exception type requires its own, different handling.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

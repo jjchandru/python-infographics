@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Try Except With While Loop</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.2 - ERRORS &amp; EXCEPTIONS</h1>
+    <span class="page-number">(5)</span>
+  </div>
+  <p class="subtitle">Now let's keep asking until the input is valid</p>
+
+  <section class="box">
+    <h2>PROGRAM</h2>
+    <pre class="code"><span class="keyword">while</span> True:
+    <span class="keyword">try</span>:
+        age = input("Enter your age: ")
+        age = int(age)
+        <span class="keyword">break</span>
+    <span class="keyword">except</span> <span class="exception">ValueError</span>:
+        print("Invalid number for age.")
+
+print("Age: ", age)</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code">Enter your age: <span class="out">ten</span>
+<span class="out">Invalid number for age.</span>
+Enter your age: <span class="out">twenty</span>
+<span class="out">Invalid number for age.</span>
+Enter your age: <span class="out">20</span>
+<span class="out">Age:  20</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">while True</code> repeats the block forever, until something inside it runs <code class="code-small">break</code>.</li>
+      <li>Each pass: ask for age, try converting it.</li>
+      <li>Fails &mdash; <code class="code-small">except</code> prints the message, no <code class="code-small">break</code>, so the loop just asks again.</li>
+      <li>Succeeds &mdash; <code class="code-small">int(age)</code> works, <code class="code-small">break</code> exits the loop with a valid age in hand.</li>
+      <li>This is what actually fixes the frustration from the earlier questions &mdash; only the one field gets retried, not the whole form.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

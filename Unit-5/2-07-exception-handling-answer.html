@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Exception Handling Ideal Answer</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .question {
+        font-size: 17px;
+    }
+    .code {
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.2 - ERRORS &amp; EXCEPTIONS</h1>
+    <span class="page-number">(7)</span>
+  </div>
+  <p class="subtitle">The ideal answer</p>
+
+  <section class="box">
+    <h2>QUESTION</h2>
+    <p class="question">Brief how exceptions can be handled in Python. If an arithmetic expression in Python divides a number by zero, it results in <code class="code-small">ZeroDivisionError</code>. Write an example program that demonstrates handling <code class="code-small">ZeroDivisionError</code>.</p>
+  </section>
+
+  <section class="box">
+    <h2>ANSWER</h2>
+    <p>An exception in a line can be handled by enclosing that line within a <code class="code-small">try</code> block. The try block must be followed by an <code class="code-small">except</code> block, which is executed if the exception occurs at execution time.</p>
+    <pre class="code"><span class="keyword">try</span>:
+    a = 10
+    b = 0
+    result = a / b
+    print("Result:", result)
+<span class="keyword">except</span> <span class="exception">ZeroDivisionError</span>:
+    print("Cannot divide by zero.")</pre>
+  </section>
+
+</body>
+</html>
