@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Reading a CSV File</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.1 - FILE HANDLING</h1>
+    <span class="page-number">(6)</span>
+  </div>
+  <p class="subtitle">The csv module splits each line into values at the commas.</p>
+
+  <section class="box">
+    <h2>FILE: products.csv</h2>
+    <pre class="code">Name,Price
+Apple,40
+Bread,35
+Milk,25</pre>
+  </section>
+
+  <section class="box">
+    <h2>PROGRAM</h2>
+    <pre class="code"><span class="keyword">import</span> csv
+
+file = open("products.csv", "r")
+reader = csv.reader(file)
+
+for row in reader:
+    print(row)
+
+file.close()</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code"><span class="out">['Name', 'Price']
+['Apple', '40']
+['Bread', '35']
+['Milk', '25']</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">csv.reader(file)</code> wraps the file object so each line is split into a list of values at the commas.</li>
+      <li><code class="code-small">for row in reader:</code> gives one row at a time as a list of strings &mdash; the header row comes first, just like any other row.</li>
+      <li><code class="code-small">print(row)</code> shows each row as a Python list; note the price is a string (<code class="code-small">"40"</code>), not a number &mdash; everything read from a file starts out as text.</li>
+      <li><code class="code-small">file.close()</code> releases the file once all rows have been read.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

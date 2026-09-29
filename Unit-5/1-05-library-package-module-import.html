@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Library, Package, Module &amp; Import</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.1 - FILE HANDLING</h1>
+    <span class="page-number">(5)</span>
+  </div>
+  <p class="subtitle">Not everything you need is built into the language &mdash; some tools live in libraries.</p>
+
+  <section class="box">
+    <h2>WHAT IS A LIBRARY?</h2>
+    <ul>
+      <li>A library is a collection of Python code organized as modules and packages.</li>
+      <li>A library may be just a single module, or a package containing many modules.</li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h2>MODULE vs. PACKAGE</h2>
+    <ul>
+      <li><b>Module</b> &mdash; a single <code class="code-small">.py</code> file containing a set of functions and classes.</li>
+      <li><b>Package</b> &mdash; a folder containing multiple modules.</li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h2>PYTHON STANDARD LIBRARY</h2>
+    <ul>
+      <li>Ships with every Python installation &mdash; no separate download needed.</li>
+      <li>Contains modules and packages for common requirements outside the core language: <code class="code-small">datetime</code>, <code class="code-small">math</code>, <code class="code-small">random</code>, <code class="code-small">csv</code>, and more.</li>
+      <li>Still needs <code class="code-small">import</code> before use.</li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h2>THIRD-PARTY LIBRARY</h2>
+    <ul>
+      <li>Not part of the Python installation.</li>
+      <li>Downloaded separately using the <code class="code-small">pip</code> command (e.g. <code class="code-small">pip install openpyxl</code>).</li>
+      <li>Once installed, it is imported just like any other library.</li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h2>IMPORTING A LIBRARY</h2>
+    <pre class="code"><span class="keyword">import</span> math
+math.sqrt(16)
+
+<span class="keyword">from</span> math <span class="keyword">import</span> sqrt
+sqrt(16)</pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">import x</code> loads the whole library &mdash; everything inside it is accessed as <code class="code-small">x.name</code>.</li>
+      <li><code class="code-small">from x import y</code> pulls out one specific tool, used directly without the prefix.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

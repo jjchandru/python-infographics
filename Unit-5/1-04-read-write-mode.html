@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Read and Write Mode (r+)</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.1 - FILE HANDLING</h1>
+    <span class="page-number">(4)</span>
+  </div>
+  <p class="subtitle">"r+" lets you read and write the same file, without erasing it first.</p>
+
+  <section class="box">
+    <h2>FILE: example.txt (before)</h2>
+    <pre class="code">Line 1
+Line 2</pre>
+  </section>
+
+  <section class="box">
+    <h2>PROGRAM</h2>
+    <pre class="code">file = <span class="keyword">open</span>("example.txt", "r+")
+content = file.read()
+print(content)
+file.write("Line 3\n")
+file.<span class="keyword">close</span>()</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code"><span class="out">Line 1
+Line 2</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>FILE: example.txt (after)</h2>
+    <pre class="code">Line 1
+Line 2
+Line 3</pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">open("example.txt", "r+")</code> opens the file for both reading and writing without erasing existing content, unlike <code class="code-small">"w"</code>.</li>
+      <li><code class="code-small">file.read()</code> reads the entire content into <code class="code-small">content</code> and moves the file's position pointer to the end.</li>
+      <li><code class="code-small">print(content)</code> shows what was actually read, before anything new is written.</li>
+      <li><code class="code-small">file.write("Line 3\n")</code> writes starting exactly where the pointer left off &mdash; after <code class="code-small">read()</code>, that's the end, so it's effectively appended.</li>
+      <li><code class="code-small">close()</code> flushes the write to disk.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

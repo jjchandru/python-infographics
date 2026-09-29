@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Reading a File</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.1 - FILE HANDLING</h1>
+    <span class="page-number">(1)</span>
+  </div>
+  <p class="subtitle">Read a text file line by line, then close it.</p>
+
+  <section class="box">
+    <h2>FILE: example.txt</h2>
+    <pre class="code">Line 1
+Line 2</pre>
+  </section>
+
+  <section class="box">
+    <h2>PROGRAM</h2>
+    <pre class="code">file = <span class="keyword">open</span>("example.txt", "r")
+
+for line in file:
+    print(line, end="")
+
+file.<span class="keyword">close</span>()</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code"><span class="out">Line 1
+Line 2</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">open("example.txt", "r")</code> opens the file in read mode and gives back a file object stored in <code class="code-small">file</code>.</li>
+      <li><code class="code-small">for line in file:</code> walks through the file object one line at a time; each line still carries its trailing newline character.</li>
+      <li><code class="code-small">print(line, end="")</code> prints that line as-is, skipping print's own newline so lines don't get double-spaced.</li>
+      <li><code class="code-small">file.close()</code> releases the file back to the OS once you're done reading it.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

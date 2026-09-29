@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Reading a JSON File</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.1 - FILE HANDLING</h1>
+    <span class="page-number">(7)</span>
+  </div>
+  <p class="subtitle">The json module turns JSON text straight into Python values.</p>
+
+  <section class="box">
+    <h2>WHAT IS JSON?</h2>
+    <ul>
+      <li>JSON (JavaScript Object Notation) is a lightweight, text-based format for storing and exchanging structured data.</li>
+      <li>It looks just like a Python <code class="code-small">dict</code> &mdash; key-value pairs inside <code class="code-small">{ }</code>, and lists inside <code class="code-small">[ ]</code>.</li>
+      <li>Widely used for config files, APIs, and exchanging data between programs written in different languages.</li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h2>FILE: product.json</h2>
+    <pre class="code">{
+  "name": "Apple",
+  "price": 40
+}</pre>
+  </section>
+
+  <section class="box">
+    <h2>PROGRAM</h2>
+    <pre class="code"><span class="keyword">import</span> json
+
+file = open("product.json", "r")
+data = json.load(file)
+print(data)
+
+file.close()</pre>
+  </section>
+
+  <section class="box">
+    <h2>OUTPUT</h2>
+    <pre class="code"><span class="out">{'name': 'Apple', 'price': 40}</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">json.load(file)</code> reads the file object and parses its JSON text into a Python value in one step.</li>
+      <li>Since the file holds a JSON object (<code class="code-small">{...}</code>), <code class="code-small">json.load</code> returns a Python <code class="code-small">dict</code> with the same keys and values.</li>
+      <li><code class="code-small">print(data)</code> shows the dict &mdash; note <code class="code-small">price</code> comes back as a real Python <code class="code-small">int</code> (<code class="code-small">40</code>), not <code class="code-small">"40"</code> like CSV did. JSON remembers the original type; CSV is always plain text.</li>
+      <li><code class="code-small">file.close()</code> releases the file once reading is finished.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

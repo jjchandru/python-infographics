@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Python - Writing a File</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+    .code {
+        font-size: 18px;
+    }
+    ul {
+        padding: 12px 12px 12px 32px;
+        margin: 0;
+        line-height: 1.6;
+    }
+    li {
+        margin-bottom: 8px;
+    }
+</style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>UNIT 5.1 - FILE HANDLING</h1>
+    <span class="page-number">(2)</span>
+  </div>
+  <p class="subtitle">Write mode creates a file, or wipes it clean if it already exists.</p>
+
+  <section class="box">
+    <h2>FILE: example.txt (before)</h2>
+    <pre class="code"><span class="placeholder">(does not exist yet)</span></pre>
+  </section>
+
+  <section class="box">
+    <h2>PROGRAM</h2>
+    <pre class="code">file = <span class="keyword">open</span>("example.txt", "w")
+file.write("Hello\n")
+file.write("World\n")
+file.<span class="keyword">close</span>()</pre>
+  </section>
+
+  <section class="box">
+    <h2>FILE: example.txt (after)</h2>
+    <pre class="code">Hello
+World</pre>
+  </section>
+
+  <section class="box">
+    <h2>EXPLANATION</h2>
+    <ul>
+      <li><code class="code-small">open("example.txt", "w")</code> opens the file in write mode &mdash; if the file exists its old content is erased immediately; if it doesn't exist, a new file is created.</li>
+      <li><code class="code-small">write()</code> writes the string exactly as given; it does not add a newline for you, which is why <code class="code-small">"Hello\n"</code> includes one.</li>
+      <li><code class="code-small">close()</code> saves the changes to disk and releases the file handle.</li>
+    </ul>
+  </section>
+
+</body>
+</html>
